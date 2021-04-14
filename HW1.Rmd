@@ -1,0 +1,22 @@
+---
+title: "590 HW1"
+author: "Mason Carhart"
+date: "4/13/2021"
+output: pdf_document
+---
+
+
+```{r}
+
+library(pacman)
+
+p_load(readr,data.table,dplyr,janitor, haven, here)
+
+```
+
+```{r}
+
+af = read_dta(here("afghanistan_anonymized_data.dta")) %>% clean_names()
+
+```
+
