@@ -1,6 +1,6 @@
 ---
 title: "590 HW1"
-author: "Mason Carhart"
+author: "Austin Turvy Derek Holste Mason Carhart"
 date: "4/13/2021"
 output: pdf_document
 ---
@@ -19,4 +19,16 @@ p_load(readr,data.table,dplyr,janitor, haven, here)
 af = read_dta(here("afghanistan_anonymized_data.dta")) %>% clean_names()
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
