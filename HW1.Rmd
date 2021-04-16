@@ -10,7 +10,7 @@ output: pdf_document
 ```{r}
 
 library(pacman)
-p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr)
+p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr, lfe, sandhich, tidyverse, lmtest)
 
 
 ```
@@ -23,12 +23,12 @@ af = read_dta(here("afghanistan_anonymized_data.dta")) #%>% clean_names()
 
 ```
 
+1.
+An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
 
 
 ```{r, Derek try}
-af$nonoutlier_1 = 1
-
-af <- af %>% mutate(outlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
+af <- af %>% mutate(nonoutlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
                                     (f07_jeribs_cnt > 10 & f07_observed == 1)|
                                     (f07_num_sheep_cnt > 50 & f07_observed == 1)|
                                       (s08_num_ppl_hh_cnt > 20 & s08_observed == 1)|
@@ -44,34 +44,26 @@ af <- af %>% mutate(o_4 = ifelse(s08_num_ppl_hh_cnt > 20 & s08_observed == 1,0,1
 af <- af %>% mutate(o_5 = ifelse(s08_jeribs_cnt > 10 & s08_observed == 1,0,1))
 af <- af %>% mutate(o_6 = ifelse(s08_num_sheep_cnt > 50 & s08_observed == 1,0,1))
 
-
+sum(af$nonoutlier
+    )
 ```
 
-1.
-An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
-
-
-```{r Results, echo=FALSE, results = 'asis'}
-
-
-reg2 = lm(burden ~ mod + fed_funds_rate + fed_funds_rate*mod, data = blog)
-
-se_burden  <- sqrt(diag(vcovHC(reg2, type = "HC1")))
-
-stargazer(reg2, keep.stat = c('n', 'rsq'),title = "Regression Results",
-          se = list(se_burden),
-          covariate.labels = c('Before Time Period', "Fed Funds Rate", "After Time Period"),
-          dep.var.labels = c('Mortgage Burden'), type = 'latex', header = FALSE, float = TRUE,  notes = "Heteroskedasticity Robust Standard Errors Used for S.E")
-
-#Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-```
 
 
 ```{r}
+sdf <- subset(af, f07_girl_cnt ==1 & nonoutlier ==1 & f07_test_observed ==1)
+bsdf <- subset(af, f07_girl_cnt ==0 & nonoutlier ==1 & f07_test_observed ==1)
 
-reg1 = lm(  , data = af)
+m1 <- lm(f07_formal_school ~ treatment + chagcharan,
+            data = sdf)
+m2 <- lm(f07_formal_school ~ treatment + chagcharan,
+            data = bsdf)
 
+cluster_se <- sqrt(diag(vcovCL(m1,cluster = sdf$clustercode)))
+cluster_se
 
+cluster_se_b <- sqrt(diag(vcovCL(m2,cluster = bsdf$clustercode)))
+cluster_se_b
 ```
 
 
