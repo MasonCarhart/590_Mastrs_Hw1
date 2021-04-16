@@ -19,9 +19,55 @@ p_load(readr, data.table, dplyr, janitor, haven, here)
 
 ```{r}
 
-af = read_dta(here("afghanistan_anonymized_data.dta")) %>% clean_names()
+af = read_dta(here("afghanistan_anonymized_data.dta")) #%>% clean_names()
 
 ```
+
+
+gen nonoutlier = 1 
+replace nonoutlier = 0 if f07_num_ppl_hh_cnt > 20 & f07_observed == 1
+replace nonoutlier = 0 if f07_jeribs_cnt > 10 & f07_observed == 1
+replace nonoutlier = 0 if f07_num_sheep_cnt > 50 & f07_observed == 1
+replace nonoutlier = 0 if s08_num_ppl_hh_cnt > 20 & s08_observed == 1
+replace nonoutlier = 0 if s08_jeribs_cnt > 10 & s08_observed == 1
+replace nonoutlier = 0 if s08_num_sheep_cnt > 50 & s08_observed == 1
+
+
+
+```{r}
+
+af = af %>% mutate(af$nonoutlier1, if_else(f07_num_ppl_hh_cnt > 20, 1, 0))
+af = af %>% mutate(af$nonoutlier1, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier2, if_else(f07_jeribs_cnt > 10 , 1, 0))
+af = af %>% mutate(af$nonoutlier2, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier3, if_else(f07_num_sheep_cnt > 50, 1, 0))
+af = af %>% mutate(af$nonoutlier3, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier4, if_else(s08_num_ppl_hh_cnt > 20, 1, 0))
+af = af %>% mutate(af$nonoutlier4, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier5, if_else(s08_jeribs_cnt > 10, 1, 0))
+af = af %>% mutate(af$nonoutlier5, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier6, if_else(s08_num_sheep_cnt > 50, 1, 0))
+af = af %>% mutate(af$nonoutlier6, if_else(f07_observed == 1 , 1, 0))
+
+
+af = af %>% mutate(af$nonoutlier, if_else(f07_num_ppl_hh_cnt > 20, 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_jeribs_cnt > 10 , 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_num_sheep_cnt > 50, 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(s08_num_ppl_hh_cnt > 20, 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(s08_jeribs_cnt > 10, 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_observed == 1 , 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(s08_num_sheep_cnt > 50, 1, 0))
+af = af %>% mutate(af$nonoutlier, if_else(f07_observed == 1 , 1, 0))
+
+sum(af$nonutlier)
+
+```
+
+
 
 
 
