@@ -48,7 +48,7 @@ af <- af %>% mutate(o_6 = ifelse(s08_num_sheep_cnt > 50 & s08_observed == 1,0,1)
 ```
 
 1.
-An outlier observation is someone who 
+An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
 
 
 ```{r Results, echo=FALSE, results = 'asis'}
