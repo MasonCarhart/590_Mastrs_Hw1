@@ -12,14 +12,20 @@ output: pdf_document
 library(pacman)
 p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr, lfe, stargazer)
 
+```
+
+
+
+```{r Data}
+# Load data
+af = read_dta(here("afghanistan_anonymized_data.dta")) 
 
 ```
 
 
-```{r, Derek try}
-af$nonoutlier_1 = 1
-
-af <- af %>% mutate(outlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
+```{r, Create nonoutlier columns}
+# Create nonoutlier column
+af <- af %>% mutate(nonoutlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
                                     (f07_jeribs_cnt > 10 & f07_observed == 1)|
                                     (f07_num_sheep_cnt > 50 & f07_observed == 1)|
                                       (s08_num_ppl_hh_cnt > 20 & s08_observed == 1)|
@@ -36,16 +42,22 @@ An outlier observation is someone who had more than 50 sheep or goats owned by t
 
 ```{r Results, echo=FALSE, results = 'asis'}
 
-# Run regression for table 4
+# Run girls regression for table 4
 reg1 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode, 
-            data = af %>% filter(f07_girl_cnt ==1 & 
-                                 nonoutlier ==1 & 
-                                 f07_test_observed ==1))
+            data = af %>% filter(f07_girl_cnt == 1 & 
+                                 nonoutlier == 1 & 
+                                 f07_test_observed == 1))
+
+# Run boys regression for table 4
+reg2 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode, 
+            data = af %>% filter(f07_girl_cnt == 0 & 
+                                 nonoutlier == 1 & 
+                                 f07_test_observed == 1))
 
 # Create Stargazer Table
-stargazer(reg1, keep.stat = c('n', 'rsq'),title = "Regression Results",
+stargazer(reg1, reg2, keep.stat = c('n', 'rsq'),title = "Regression Results",
           covariate.labels = c('Treatment', "chagcharan"),
-          dep.var.labels = c('Girl Enrolled in Formal School Fall 2007'), type = 'latex', header = FALSE, float = TRUE,  notes = "S.E Clustered by village")
+          dep.var.labels = c('Girl Enrolled in Formal School Fall 2007', 'Boy Enrolled in Formal School Fall 2007'), type = 'latex', header = FALSE, float = TRUE,  notes = "S.E Clustered by village")
 
 #Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ```
