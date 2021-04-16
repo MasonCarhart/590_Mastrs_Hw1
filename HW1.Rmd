@@ -7,16 +7,35 @@ output: pdf_document
 
 
 
-```{r}
-
+```{r Packages}
+# Load packages
 library(pacman)
-p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr)
+<<<<<<< HEAD
+p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr, lfe, stargazer)
 
 
 ```
 
 
 
+```{r Data}
+# Load data
+af = read_dta(here("afghanistan_anonymized_data.dta")) 
+=======
+p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr)
+
+>>>>>>> 712401a55c81e5db2491c7f23401b9b5e8429926
+
+```
+
+
+
+<<<<<<< HEAD
+
+```{r, nonoutlier column}
+# Create nonoutlier column
+af <- af %>% mutate(nonoutlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
+=======
 ```{r}
 
 af = read_dta(here("afghanistan_anonymized_data.dta")) #%>% clean_names()
@@ -29,20 +48,13 @@ af = read_dta(here("afghanistan_anonymized_data.dta")) #%>% clean_names()
 af$nonoutlier_1 = 1
 
 af <- af %>% mutate(outlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
+>>>>>>> 712401a55c81e5db2491c7f23401b9b5e8429926
                                     (f07_jeribs_cnt > 10 & f07_observed == 1)|
                                     (f07_num_sheep_cnt > 50 & f07_observed == 1)|
                                       (s08_num_ppl_hh_cnt > 20 & s08_observed == 1)|
                                       (s08_jeribs_cnt > 10 & s08_observed == 1) |
                                       (s08_num_sheep_cnt > 50 & s08_observed == 1)
                                       ,0,1))
-
-
-af <- af %>% mutate(o_1 = ifelse(f07_num_ppl_hh_cnt > 20 & f07_observed == 1,0,1))
-af <- af %>% mutate(o_2 = ifelse(f07_jeribs_cnt > 10 & f07_observed == 1,0,1))
-af <- af %>% mutate(o_3 = ifelse(f07_num_sheep_cnt > 50 & f07_observed == 1,0,1))
-af <- af %>% mutate(o_4 = ifelse(s08_num_ppl_hh_cnt > 20 & s08_observed == 1,0,1))
-af <- af %>% mutate(o_5 = ifelse(s08_jeribs_cnt > 10 & s08_observed == 1,0,1))
-af <- af %>% mutate(o_6 = ifelse(s08_num_sheep_cnt > 50 & s08_observed == 1,0,1))
 
 
 ```
@@ -53,15 +65,16 @@ An outlier observation is someone who had more than 50 sheep or goats owned by t
 
 ```{r Results, echo=FALSE, results = 'asis'}
 
+# Run regression for table 4
+reg1 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode, 
+            data = af %>% filter(f07_girl_cnt ==1 & 
+                                 nonoutlier ==1 & 
+                                 f07_test_observed ==1))
 
-reg2 = lm(burden ~ mod + fed_funds_rate + fed_funds_rate*mod, data = blog)
-
-se_burden  <- sqrt(diag(vcovHC(reg2, type = "HC1")))
-
-stargazer(reg2, keep.stat = c('n', 'rsq'),title = "Regression Results",
-          se = list(se_burden),
-          covariate.labels = c('Before Time Period', "Fed Funds Rate", "After Time Period"),
-          dep.var.labels = c('Mortgage Burden'), type = 'latex', header = FALSE, float = TRUE,  notes = "Heteroskedasticity Robust Standard Errors Used for S.E")
+# Create Stargazer Table
+stargazer(reg1, keep.stat = c('n', 'rsq'),title = "Regression Results",
+          covariate.labels = c('Treatment', "chagcharan"),
+          dep.var.labels = c('Girl Enrolled in Formal School Fall 2007'), type = 'latex', header = FALSE, float = TRUE,  notes = "S.E Clustered by village")
 
 #Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ```
