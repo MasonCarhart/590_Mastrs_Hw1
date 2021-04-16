@@ -54,6 +54,27 @@ sum(af$nonutlier)
 
 ```
 
+```{r, Derek try}
+af$nonoutlier_1 = 1
+
+af <- af %>% mutate(outlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
+                                    (f07_jeribs_cnt > 10 & f07_observed == 1)|
+                                    (f07_num_sheep_cnt > 50 & f07_observed == 1)|
+                                      (s08_num_ppl_hh_cnt > 20 & s08_observed == 1)|
+                                      (s08_jeribs_cnt > 10 & s08_observed == 1) |
+                                      (s08_num_sheep_cnt > 50 & s08_observed == 1)
+                                      ,0,1))
+
+
+af <- af %>% mutate(o_1 = ifelse(f07_num_ppl_hh_cnt > 20 & f07_observed == 1,0,1))
+af <- af %>% mutate(o_2 = ifelse(f07_jeribs_cnt > 10 & f07_observed == 1,0,1))
+af <- af %>% mutate(o_3 = ifelse(f07_num_sheep_cnt > 50 & f07_observed == 1,0,1))
+af <- af %>% mutate(o_4 = ifelse(s08_num_ppl_hh_cnt > 20 & s08_observed == 1,0,1))
+af <- af %>% mutate(o_5 = ifelse(s08_jeribs_cnt > 10 & s08_observed == 1,0,1))
+af <- af %>% mutate(o_6 = ifelse(s08_num_sheep_cnt > 50 & s08_observed == 1,0,1))
+
+
+```
 
 ```{r Results, echo=FALSE, results = 'asis'}
 
