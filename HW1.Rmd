@@ -57,7 +57,8 @@ reg2 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode,
 # Create Stargazer Table
 stargazer(reg1, reg2, keep.stat = c('n', 'rsq'),title = "Regression Results",
           covariate.labels = c('Treatment', "chagcharan"),
-          dep.var.labels = c('Girl Enrolled in Formal School Fall 2007', 'Boy Enrolled in Formal School Fall 2007'), type = 'latex', header = FALSE, float = TRUE,  notes = "S.E Clustered by village")
+          dep.var.labels = c('Girl Enrolled in Formal School Fall 2007', 'Boy Enrolled in Formal School Fall 2007'), 
+          type = 'latex', header = FALSE, float = TRUE,  notes = "S.E Clustered by village")
 
 #Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ```
