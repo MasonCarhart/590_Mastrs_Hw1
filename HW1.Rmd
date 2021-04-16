@@ -39,9 +39,18 @@ af$nonoutlier = 1
 
 af = af %>% mutate(af$nonoutlier, if_else(f07_num_ppl_hh_cnt > 20, if_else(f07_jeribs_cnt > 10 , if_else(f07_observed == 1 ,    if_else(s08_num_ppl_hh_cnt > 20, if_else(s08_jeribs_cnt > 10, if_else(s08_num_sheep_cnt > 50, if_else(f07_observed == 1 , if_else(s08_observed == 1 , 1, 0), 0), 0), 0), 0), 0), 0), 0))
 
-sum(af$nonutlier)
+sum(af$nonoutlier)
 
 ```
+
+```{r}
+
+af = af$nonoutlier %>% mutate(ifelse(f07_num_ppl_hh_cnt > 20 & f07_observed == 1,1,0))
+
+sum(af$nonoutlier)
+
+```
+
 
 ```{r}
 
