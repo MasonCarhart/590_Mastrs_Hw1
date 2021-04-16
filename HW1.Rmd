@@ -6,13 +6,16 @@ output: pdf_document
 ---
 
 
+
 ```{r}
 
 library(pacman)
 
-p_load(readr,data.table,dplyr,janitor, haven, here)
+p_load(readr, data.table, dplyr, janitor, haven, here)
 
 ```
+
+
 
 ```{r}
 
@@ -20,6 +23,14 @@ af = read_dta(here("afghanistan_anonymized_data.dta")) %>% clean_names()
 
 ```
 
+
+
+```{r}
+
+reg1 = lm(  , data = af)
+
+
+```
 
 
 
