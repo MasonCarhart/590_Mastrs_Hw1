@@ -7,23 +7,19 @@ output: pdf_document
 
 
 
-```{r}
-
+```{r Packages}
+# Load packages
 library(pacman)
+p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr, lfe, stargazer)
 
-<<<<<<< HEAD
-p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr)
-=======
-p_load(readr, data.table, dplyr, janitor, haven, here)
->>>>>>> 5461940e7d0d92a4a53d1609ed435671267359c7
 
 ```
 
 
 
-```{r}
-
-af = read_dta(here("afghanistan_anonymized_data.dta")) #%>% clean_names()
+```{r Data}
+# Load data
+af = read_dta(here("afghanistan_anonymized_data.dta")) 
 
 ```
 
