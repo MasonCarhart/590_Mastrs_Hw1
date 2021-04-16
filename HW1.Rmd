@@ -51,17 +51,6 @@ stargazer(reg1, keep.stat = c('n', 'rsq'),title = "Regression Results",
 ```
 
 
-```{r}
-
-reg1 = lm(  , data = af)
-
-
-```
-
-
-
-
-
 
 
 
