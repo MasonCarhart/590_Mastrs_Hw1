@@ -11,7 +11,7 @@ output: pdf_document
 
 library(pacman)
 
-p_load(readr, data.table, dplyr, janitor, haven, here, tidyerse, skimr)
+p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr)
 
 ```
 
