@@ -23,6 +23,9 @@ af = read_dta(here("afghanistan_anonymized_data.dta"))
 ```
 
 
+1.
+An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
+
 ```{r, Create nonoutlier columns}
 # Create nonoutlier column
 af <- af %>% mutate(nonoutlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed == 1) |
@@ -33,12 +36,16 @@ af <- af %>% mutate(nonoutlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed =
                                       (s08_num_sheep_cnt > 50 & s08_observed == 1)
                                       ,0,1))
 
-
 ```
 
-1.
-An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
 
+```{r}
+
+mytable <- table(af$nonoutlier,af$nonoutlier) 
+mytable 
+
+```
+There are 76 non-outliers in the data given the specifications prior.
 
 ```{r Results, echo=FALSE, results = 'asis'}
 
