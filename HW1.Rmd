@@ -10,7 +10,8 @@ output: pdf_document
 ```{r Packages}
 # Load packages
 library(pacman)
-p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr, lfe, stargazer)
+p_load(readr, data.table, dplyr, janitor, haven, here, 
+       tidyverse, skimr, lfe, stargazer, quantreg)
 
 ```
 
@@ -206,4 +207,191 @@ reg14 = felm(s08_both_norma_total ~ treatment + chagcharan +
 
 ```
 
+
+```{r table 2}
+
+# Getting mean values for column 1
+col_1 = af %>% 
+  filter(treatment == 1 & nonoutlier == 1 & f07_observed == 1) %>% 
+  select(
+    c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl)
+  ) %>% 
+  mutate(
+  across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl), mean, na.rm = TRUE)
+  ) %>% head(., 1) %>% unlist(.)
+
+# Getting mean values for column 2
+col_2 = af %>% 
+  filter(treatment == 0 & nonoutlier == 1 & f07_observed == 1) %>% 
+  select(
+    c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl)
+  ) %>% 
+  mutate(
+  across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl), mean, na.rm = TRUE)
+  ) %>% head(., 1) %>% unlist(.)
+
+
+
+# Create regression functions for column 3
+reg_function_coef = function(x){
+    reg = felm(x ~ treatment | 0 | 0 | clustercode, 
+               data = af %>% filter(nonoutlier == 1 & f07_observed == 1))
+    coef = coef(reg)[2]
+    return(coef)
+}
+
+
+# Regression function for SE
+reg_function_se = function(x){
+  reg = felm(x ~ treatment | 0 | 0 | clustercode, 
+             data = af %>% filter(nonoutlier == 1 & f07_observed == 1))
+  se = sqrt(diag(vcov(reg)))[2]
+  return(se)
+}
+
+
+
+# Obtain column 3 coefficients
+col_3_coefs = af %>% 
+  filter(nonoutlier == 1 & f07_observed == 1) %>% 
+  select(
+    c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl)
+  ) %>% 
+  mutate(
+  across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl), reg_function_coef)
+  ) %>% head(., 1) %>% unlist(.)
+
+# Obtain column 3 SE
+col_3_se = af %>% 
+  filter(nonoutlier == 1 & f07_observed == 1) %>% 
+  select(
+    c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl)
+  ) %>% 
+  mutate(
+  across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
+                   f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_num_sheep_cnt, f07_nearest_scl), reg_function_se)
+  ) %>% head(., 1) %>% unlist(.)
+
+# Regression for column 7
+col_7 = felm(f07_formal_school ~ f07_heads_child_cnt + 
+               f07_girl_cnt + f07_age_cnt + f07_duration_village_cnt + 
+               f07_farsi_cnt + f07_tajik_cnt + f07_farmer_cnt + 
+               f07_age_head_cnt + f07_yrs_ed_head_cnt + f07_num_ppl_hh_cnt + 
+               f07_jeribs_cnt + f07_num_sheep_cnt + f07_nearest_scl
+             | 0 | 0 | clustercode, 
+             data = af %>% 
+               filter(nonoutlier == 1 & f07_observed == 1 & treatment == 0))
+
+# Regression for column 8
+col_8 = felm(f07_both_norma_total ~ f07_heads_child_cnt + 
+               f07_girl_cnt + f07_age_cnt + f07_duration_village_cnt + 
+               f07_farsi_cnt + f07_tajik_cnt + f07_farmer_cnt + 
+               f07_age_head_cnt + f07_yrs_ed_head_cnt + f07_num_ppl_hh_cnt + 
+               f07_jeribs_cnt + f07_num_sheep_cnt + f07_nearest_scl
+             | 0 | 0 | clustercode, 
+             data = af %>% 
+               filter(nonoutlier == 1 & f07_observed == 1 & 
+                        f07_test_observed == 1 & treatment == 0))
+```
+
+
+
+
+```{r further analysis}
+
+# Quant regression function to gather coefficients at different percentiles
+quant_coef = function(x, inter = FALSE, is_girl = FALSE){
+  nearest_scl = vector()
+  interaction = vector()
+  grl_count = vector()
+  for (i in x) {
+          qr <- rq(f07_formal_school ~ f07_nearest_scl*f07_girl_cnt + 
+                    f07_nearest_scl + f07_girl_cnt, data= af %>% 
+                    filter(
+                      nonoutlier == 1 & f07_observed == 1 & treatment == 0
+                      ),
+                    tau = i)
+          scl = coef(qr)[2]
+          grl = coef(qr)[3]
+          int = coef(qr)[4]
+          nearest_scl = append(nearest_scl, scl)
+          grl_count = append(grl_count, grl)
+          interaction = append(interaction, int)
+  }
+  if (inter == TRUE){
+    return(interaction)
+  } else if (is_girl == TRUE){
+    return(grl_count)
+  } else{
+    return(nearest_scl)
+  }
+}
+
+# Gathering coefficients
+interaction = quant_coef(seq(0, 1, .001), int = TRUE)
+nearest_school = quant_coef(seq(0, 1, .001))
+grl_count = quant_coef(seq(0, 1, .001), is_girl = TRUE)
+
+
+# Creating coefficient dataframe
+quant_df = tibble(
+  scl_girl = interaction,
+  nearest_scl = nearest_school,
+  grl_count = grl_count,
+  tau = seq(0, 1, .001)
+) %>% mutate(difference = scl_girl + nearest_scl)
+
+
+# Plotting coefficients
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = scl_girl), color = "dark blue", size = 1.5) +
+  labs(x = "Percentile", y = "Interaction")
+
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = nearest_school), color = "dark red", size = 1.5) +
+  labs(x = "Percentile", y = "Nearest School")
+
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = difference), color = "dark red", size = 1.5) +
+  labs(x = "Percentile", y = "Nearest School")
+
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = grl_count), color = "dark red", size = 1.5) +
+  labs(x = "Percentile", y = "Nearest School")
+
+```
+
+```{r further analysis 2}
+
+age_reg = felm(f07_formal_school ~ f07_age_cnt + f07_age_cnt*f07_nearest_scl + 
+                 f07_nearest_scl | 0 | 0 | clustercode,
+               data = af %>% filter(
+                 nonoutlier == 1 & f07_observed == 1 & 
+                   treatment == 0 & f07_girl_cnt == 1)
+               )
+
+```
 
