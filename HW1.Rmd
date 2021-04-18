@@ -10,7 +10,8 @@ output: pdf_document
 ```{r Packages}
 # Load packages
 library(pacman)
-p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, skimr, lfe, stargazer)
+p_load(readr, data.table, dplyr, janitor, haven, here, 
+       tidyverse, skimr, lfe, stargazer, quantreg)
 
 ```
 
@@ -312,13 +313,80 @@ col_8 = felm(f07_both_norma_total ~ f07_heads_child_cnt +
                f07_jeribs_cnt + f07_num_sheep_cnt + f07_nearest_scl
              | 0 | 0 | clustercode, 
              data = af %>% 
-               filter(nonoutlier == 1 & f07_observed == 1 & f07_test_observed == 1 & treatment == 0))
+               filter(nonoutlier == 1 & f07_observed == 1 & 
+                        f07_test_observed == 1 & treatment == 0))
 ```
 
 
 
 
-```{r}
+```{r further analysis}
+
+# Quant regression function to gather coefficients at different percentiles
+quant_coef = function(x, inter = FALSE, is_girl = FALSE){
+  nearest_scl = vector()
+  interaction = vector()
+  grl_count = vector()
+  for (i in x) {
+          qr <- rq(f07_formal_school ~ f07_nearest_scl*f07_girl_cnt + 
+                    f07_nearest_scl + f07_girl_cnt, data= af %>% 
+                    filter(
+                      nonoutlier == 1 & f07_observed == 1 & treatment == 0
+                      ),
+                    tau = i)
+          scl = coef(qr)[2]
+          grl = coef(qr)[3]
+          int = coef(qr)[4]
+          nearest_scl = append(nearest_scl, scl)
+          grl_count = append(grl_count, grl)
+          interaction = append(interaction, int)
+  }
+  if (inter == TRUE){
+    return(interaction)
+  } else if (is_girl == TRUE){
+    return(grl_count)
+  } else{
+    return(nearest_scl)
+  }
+}
+
+# Gathering coefficients
+interaction = quant_coef(seq(0, 1, .001), int = TRUE)
+nearest_school = quant_coef(seq(0, 1, .001))
+grl_count = quant_coef(seq(0, 1, .001), is_girl = TRUE)
+
+
+# Creating coefficient dataframe
+quant_df = tibble(
+  scl_girl = interaction,
+  nearest_scl = nearest_school,
+  grl_count = grl_count,
+  tau = seq(0, 1, .001)
+) %>% mutate(difference = scl_girl + nearest_scl)
+
+
+# Plotting coefficients
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = scl_girl), color = "dark blue", size = 1.5) +
+  labs(x = "Percentile", y = "Interaction")
+
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = nearest_school), color = "dark red", size = 1.5) +
+  labs(x = "Percentile", y = "Nearest School")
+
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = difference), color = "dark red", size = 1.5) +
+  labs(x = "Percentile", y = "Nearest School")
+
+ggplot(quant_df, aes(x = tau)) +
+  geom_line(aes(y = grl_count), color = "dark red", size = 1.5) +
+  labs(x = "Percentile", y = "Nearest School")
+
+```
+
+```{r further analysis 2}
+
+
 
 ```
 
