@@ -386,7 +386,12 @@ ggplot(quant_df, aes(x = tau)) +
 
 ```{r further analysis 2}
 
-
+age_reg = felm(f07_formal_school ~ f07_age_cnt + f07_age_cnt*f07_nearest_scl + 
+                 f07_nearest_scl | 0 | 0 | clustercode,
+               data = af %>% filter(
+                 nonoutlier == 1 & f07_observed == 1 & 
+                   treatment == 0 & f07_girl_cnt == 1)
+               )
 
 ```
 
