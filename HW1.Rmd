@@ -315,6 +315,7 @@ col_8 = felm(f07_both_norma_total ~ f07_heads_child_cnt +
              data = af %>% 
                filter(nonoutlier == 1 & f07_observed == 1 & 
                         f07_test_observed == 1 & treatment == 0))
+
 ```
 
 
@@ -381,6 +382,7 @@ ggplot(quant_df, aes(x = tau)) +
 ggplot(quant_df, aes(x = tau)) +
   geom_line(aes(y = grl_count), color = "dark red", size = 1.5) +
   labs(x = "Percentile", y = "Nearest School")
+
 
 ```
 
