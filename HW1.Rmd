@@ -435,9 +435,90 @@ reg_far_b = felm(f07_formal_school ~ treatment +
                               ))
 
 
+```
 
-stargazer(reg_near, reg_close, reg_nclose, reg_far,
-          dep.var.labels = c(), )
+
+```{r further analysis test}
+
+# Regression for near individuals
+reg_test_near_g = felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 1 &
+                              dist_near == 1
+                              ))
+
+# Regression for close individuals
+reg_test_close_g = felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 1 &
+                              dist_close == 1
+                              ))
+
+# Regression for not close individuals
+reg_test_nclose_g = felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 1 &
+                              dist_nclose == 1
+                              ))
+
+# Regression for far individuals
+reg_test_far_g = felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 1 &
+                              dist_far == 1
+                              ))
+
+# Regression for near individuals
+reg_test_near_b= felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 0 &
+                              dist_near == 1
+                              ))
+
+# Regression for close individuals
+reg_test_close_b = felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 0 &
+                              dist_close == 1
+                              ))
+
+# Regression for not close individuals
+reg_test_nclose_b = felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 0 &
+                              dist_nclose == 1
+                              ))
+
+# Regression for far individuals
+reg_test_far_b = felm(f07_test_observed ~ treatment + 
+                   chagcharan | 0 | 0 | clustercode,
+         data = af %>% filter( 
+                              f07_observed == 1 &
+                              nonoutlier == 1 &
+                              f07_girl_cnt == 0 &
+                              dist_far == 1
+                              ))
 
 ```
 
