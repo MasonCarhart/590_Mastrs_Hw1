@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.13)  21 APR 2021 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.3.18)  22 APR 2021 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **HW1.tex
 (./HW1.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> (c:/Users/dahol/AppData/Roaming/TinyTeX/texmf
+L3 programming layer <2021-02-18> (c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf
 -dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count179
@@ -23,26 +23,26 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.st
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.st
 y
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.st
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.st
 y
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen139
 ))
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen140
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count187
@@ -83,11 +83,11 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.s
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.s
 ty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.
 sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -95,7 +95,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+)) (c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -130,40 +130,40 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.st
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.st
 y
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.s
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.s
 ty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+) (c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.s
+)) (c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.s
 ty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks20
 \inpenc@posthook=\toks21
-) (c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.st
+) (c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.st
 y
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.st
+) (c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.st
 y
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color
 .cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdfte
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdfte
 x.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
@@ -177,20 +177,20 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.
 sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.
 sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdfte
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdfte
 xcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwar
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwar
 err.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
@@ -198,36 +198,36 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.st
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.st
 y
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks22
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetk
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetk
 eys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvd
 efinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfesc
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfesc
 ape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.st
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.st
 y
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltx
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltx
 macro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.st
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.st
 y
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoption
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoption
 s.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
@@ -235,28 +235,28 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 \Hy@linkcounter=\count199
 \Hy@pagecounter=\count266
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.de
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.de
 f
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-
 langpatches.def
 File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
 nguages
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.
 sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmd
 s.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count267
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -270,18 +270,18 @@ Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
 \c@Hy@tempcnt=\count268
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen149
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.st
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.st
 y
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigin
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigin
 tcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
@@ -299,7 +299,7 @@ Package hyperref Info: PDF/A mode OFF on input line 6105.
 LaTeX Info: Redefining \ref on input line 6145.
 LaTeX Info: Redefining \pageref on input line 6149.
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.
 sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
@@ -311,11 +311,11 @@ with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.d
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.d
 ef
 File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx
 .sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
@@ -324,11 +324,11 @@ with kernel methods
 \Fld@listcount=\count273
 \c@bookmark@seq@number=\count274
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rer
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rer
 unfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/un
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/un
 iquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
@@ -337,11 +337,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip52
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.
 sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count275
@@ -357,7 +357,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen159
 \Gm@dimlist=\toks23
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.
 sty
 Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
 \FV@CodeLineNo=\count278
@@ -366,7 +366,7 @@ Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
 \c@FancyVerbLine=\count279
 \FV@StepNumber=\count280
 \FV@OutFile=\write3
-) (c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.st
+) (c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.st
 y
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip53
@@ -375,17 +375,17 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen162
 \FrameSep=\dimen163
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.
 sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.
 sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graph
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graph
 ics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
@@ -394,16 +394,13 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen164
 \Gin@req@width=\dimen165
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backen
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backen
 d-pdftex.def
 File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count281
 \l__pdf_internal_box=\box50
-) (./HW1.aux
-
-LaTeX Warning: Label `' multiply defined.
-
 )
+No file HW1.aux.
 \openout1 = `HW1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
@@ -425,28 +422,28 @@ LaTeX Font Info:    ... okay on input line 110.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
 LaTeX Font Info:    ... okay on input line 110.
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epsto
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epsto
 pdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstop
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstop
 df-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package hyperref Info: Link coloring OFF on input line 110.
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
 ty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.
 sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/g
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/g
 ettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
@@ -455,7 +452,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 110.
 LaTeX Info: Redefining \pageref on input line 110.
 LaTeX Info: Redefining \nameref on input line 110.
-(./HW1.out) (./HW1.out)
 \@outlinefile=\write4
 \openout4 = `HW1.out'.
 
@@ -495,22 +491,22 @@ LaTeX Info: Redefining \nameref on input line 110.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 12.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
 12.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
 112.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
 112.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -521,121 +517,95 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 112.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 112
 .
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 112
 .
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 14.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 181.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 181.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 181.
+Overfull \hbox (102.49332pt too wide) in paragraph at lines 134--134
+[]\T1/lmtt/m/n/10 ## Warning: unable to access index for repository http://www.
+stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.0:[] 
+ []
+
+
+Overfull \hbox (2.7436pt too wide) in paragraph at lines 134--134
+[]\T1/lmtt/m/n/10 ##   cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/
+windows/contrib/4.0/PACKAGES'[] 
+ []
+
+
+Overfull \hbox (81.49338pt too wide) in paragraph at lines 174--174
+[]\T1/lmtt/m/n/10 ## Warning in p_load(readr, data.table, dplyr, janitor, haven
+, here, tidyverse, : Failed to install/load:[] 
+ []
+
 [1
 
-{c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
+{c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 239.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 239.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 239.
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-247.
-(c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
+305.
+(c:/Users/MASEl/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2] [3] [4]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 410.
-
-Underfull \vbox (badness 2469) detected at line 481
- []
-
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 468.
 [5]
-Underfull \vbox (badness 10000) detected at line 481
+Underfull \vbox (badness 10000) detected at line 539
  []
 
 
-Underfull \vbox (badness 10000) detected at line 481
+Underfull \vbox (badness 10000) detected at line 539
  []
 
-[6]
-<HW1_files/figure-latex/further analysis-1.pdf, id=60, 469.755pt x 325.215pt>
-File: HW1_files/figure-latex/further analysis-1.pdf Graphic file (type pdf)
-<use HW1_files/figure-latex/further analysis-1.pdf>
-Package pdftex.def Info: HW1_files/figure-latex/further analysis-1.pdf  used on
- input line 535.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[7]
-<HW1_files/figure-latex/further analysis-2.pdf, id=66, 469.755pt x 325.215pt>
-File: HW1_files/figure-latex/further analysis-2.pdf Graphic file (type pdf)
-<use HW1_files/figure-latex/further analysis-2.pdf>
-Package pdftex.def Info: HW1_files/figure-latex/further analysis-2.pdf  used on
- input line 545.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[8 <./HW1_files/figure-latex/further analysis-1.pdf>]
-<HW1_files/figure-latex/further analysis-3.pdf, id=76, 469.755pt x 325.215pt>
-File: HW1_files/figure-latex/further analysis-3.pdf Graphic file (type pdf)
-<use HW1_files/figure-latex/further analysis-3.pdf>
-Package pdftex.def Info: HW1_files/figure-latex/further analysis-3.pdf  used on
- input line 555.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[9 <./HW1_files/figure-latex/further analysis-2.pdf>]
-<HW1_files/figure-latex/further analysis-4.pdf, id=86, 469.755pt x 325.215pt>
-File: HW1_files/figure-latex/further analysis-4.pdf Graphic file (type pdf)
-<use HW1_files/figure-latex/further analysis-4.pdf>
-Package pdftex.def Info: HW1_files/figure-latex/further analysis-4.pdf  used on
- input line 565.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[10 <./HW1_files/figure-latex/further analysis-3.pdf>]
-<HW1_files/figure-latex/further analysis-5.pdf, id=96, 469.755pt x 325.215pt>
-File: HW1_files/figure-latex/further analysis-5.pdf Graphic file (type pdf)
-<use HW1_files/figure-latex/further analysis-5.pdf>
-Package pdftex.def Info: HW1_files/figure-latex/further analysis-5.pdf  used on
- input line 592.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[11 <./HW1_files/figure-latex/further analysis-4.pdf>] [12 <./HW1_files/figure-
-latex/further analysis-5.pdf>] (./HW1.aux)
+[6] [7]
+Underfull \vbox (badness 1005) detected at line 651
+ []
 
-LaTeX Warning: There were multiply-defined labels.
+[8]
+Underfull \vbox (badness 3690) detected at line 735
+ []
 
-Package rerunfilecheck Info: File `HW1.out' has not changed.
-(rerunfilecheck)             Checksum: 2523F88D23F4BE0D2101948F7EE050D8;311.
- ) 
+[9]
+Underfull \vbox (badness 10000) detected at line 735
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 735
+ []
+
+[10] [11] [12] [13] [14] [15]
+
+! Package inputenc Error: Unicode character ⋆ (U+22C6)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1119 ⋆
+          p\textless0.1; ⋆⋆p\textless0.05; ⋆⋆⋆p\textless0.01 
 Here is how much of TeX's memory you used:
- 10462 strings out of 481008
- 153949 string characters out of 5907772
- 469044 words of memory out of 5000000
- 27437 multiletter control sequences out of 15000+600000
- 448246 words of font info for 68 fonts, out of 8000000 for 9000
+ 10425 strings out of 480962
+ 152646 string characters out of 5905990
+ 482360 words of memory out of 5000000
+ 27452 multiletter control sequences out of 15000+600000
+ 452517 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,10n,74p,691b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.e
-nc}{c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hsy.enc}{c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/l
-m-ts1.enc}{c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm
-/lm-mathit.enc}{c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvi
-ps/lm/lm-rm.enc}<c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/
-public/lm/lmbx12.pfb><c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
-ype1/public/lm/lmmi10.pfb><c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dist/fo
-nts/type1/public/lm/lmr10.pfb><c:/Users/dahol/AppData/Roaming/TinyTeX/texmf-dis
-t/fonts/type1/public/lm/lmr12.pfb><c:/Users/dahol/AppData/Roaming/TinyTeX/texmf
--dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/dahol/AppData/Roaming/TinyTeX/t
-exmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/dahol/AppData/Roaming/TinyTe
-X/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/dahol/AppData/Roaming/T
-inyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/dahol/AppData/Roam
-ing/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/dahol/AppData/
-Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/dahol/App
-Data/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/daho
-l/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on HW1.pdf (12 pages, 255624 bytes).
-PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 50 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71i,10n,74p,691b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+!  ==> Fatal error occurred, no output PDF file produced!
