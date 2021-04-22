@@ -441,7 +441,7 @@ reg_far_b = felm(f07_formal_school ~ treatment +
 ```{r further analysis test}
 
 # Regression for near individuals
-reg_test_near_g = felm(f07_test_observed ~ treatment + 
+reg_test_near_g = felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
@@ -451,7 +451,7 @@ reg_test_near_g = felm(f07_test_observed ~ treatment +
                               ))
 
 # Regression for close individuals
-reg_test_close_g = felm(f07_test_observed ~ treatment + 
+reg_test_close_g = felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
@@ -461,7 +461,7 @@ reg_test_close_g = felm(f07_test_observed ~ treatment +
                               ))
 
 # Regression for not close individuals
-reg_test_nclose_g = felm(f07_test_observed ~ treatment + 
+reg_test_nclose_g = felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
@@ -471,7 +471,7 @@ reg_test_nclose_g = felm(f07_test_observed ~ treatment +
                               ))
 
 # Regression for far individuals
-reg_test_far_g = felm(f07_test_observed ~ treatment + 
+reg_test_far_g = felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
@@ -481,7 +481,7 @@ reg_test_far_g = felm(f07_test_observed ~ treatment +
                               ))
 
 # Regression for near individuals
-reg_test_near_b= felm(f07_test_observed ~ treatment + 
+reg_test_near_b= felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
@@ -491,7 +491,7 @@ reg_test_near_b= felm(f07_test_observed ~ treatment +
                               ))
 
 # Regression for close individuals
-reg_test_close_b = felm(f07_test_observed ~ treatment + 
+reg_test_close_b = felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
@@ -501,7 +501,7 @@ reg_test_close_b = felm(f07_test_observed ~ treatment +
                               ))
 
 # Regression for not close individuals
-reg_test_nclose_b = felm(f07_test_observed ~ treatment + 
+reg_test_nclose_b = felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
@@ -511,7 +511,7 @@ reg_test_nclose_b = felm(f07_test_observed ~ treatment +
                               ))
 
 # Regression for far individuals
-reg_test_far_b = felm(f07_test_observed ~ treatment + 
+reg_test_far_b = felm(f07_both_norma_total ~ treatment + 
                    chagcharan | 0 | 0 | clustercode,
          data = af %>% filter( 
                               f07_observed == 1 &
