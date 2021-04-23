@@ -1,0 +1,1204 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={590 HW1},
+  pdfauthor={Austin Turvy Derek Holste Mason Carhart},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{590 HW1}
+\author{Austin Turvy Derek Holste Mason Carhart}
+\date{4/13/2021}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load packages}
+\FunctionTok{library}\NormalTok{(pacman)}
+\FunctionTok{p\_load}\NormalTok{(readr, data.table, dplyr, janitor, haven, here, }
+\NormalTok{       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Installing package into 'C:/Users/MASEl/Documents/R/win-library/4.0'
+## (as 'lib' is unspecified)
+\end{verbatim}
+
+\begin{verbatim}
+## also installing the dependency 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.0:
+##   cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.0/PACKAGES'
+\end{verbatim}
+
+\begin{verbatim}
+## package 'dplyr' successfully unpacked and MD5 sums checked
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: cannot remove prior installation of package 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying C:
+## \Users\MASEl\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll to C:
+## \Users\MASEl\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission
+## denied
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: restored 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## package 'tidyverse' successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\MASEl\AppData\Local\Temp\RtmpEDLvzW\downloaded_packages
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## tidyverse installed
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tidyverse' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, : Failed to install/load:
+## tidyverse
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load data}
+\NormalTok{af }\OtherTok{=} \FunctionTok{read\_dta}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"afghanistan\_anonymized\_data.dta"}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  An outlier observation is someone who had more than 50 sheep or goats
+  owned by the household in 2007 and in the fall of 2007 or had more
+  than 10 jeribs of land owned by the household in the fall of 2007 or
+  had more than 20 poeple in the houdcount in fall of 2007 or a person
+  that has number of people in a household greater than 20 and are
+  observed in summer of 2008. Or if number of jerribs of land counted is
+  more than 10 and are observed in summer of 2008. Lastly if the number
+  of sheep and goats is above 50 and they are observed in summer of
+  2008.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create nonoutlier column}
+\NormalTok{af }\OtherTok{\textless{}{-}}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{nonoutlier=} \FunctionTok{ifelse}\NormalTok{((f07\_num\_ppl\_hh\_cnt }\SpecialCharTok{\textgreater{}} \DecValTok{20} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|}
+\NormalTok{                                    (f07\_jeribs\_cnt }\SpecialCharTok{\textgreater{}} \DecValTok{10} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)}\SpecialCharTok{|}
+\NormalTok{                                    (f07\_num\_sheep\_cnt }\SpecialCharTok{\textgreater{}} \DecValTok{50} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)}\SpecialCharTok{|}
+\NormalTok{                                      (s08\_num\_ppl\_hh\_cnt }\SpecialCharTok{\textgreater{}} \DecValTok{20} \SpecialCharTok{\&}\NormalTok{ s08\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)}\SpecialCharTok{|}
+\NormalTok{                                      (s08\_jeribs\_cnt }\SpecialCharTok{\textgreater{}} \DecValTok{10} \SpecialCharTok{\&}\NormalTok{ s08\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{|}
+\NormalTok{                                      (s08\_num\_sheep\_cnt }\SpecialCharTok{\textgreater{}} \DecValTok{50} \SpecialCharTok{\&}\NormalTok{ s08\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)}
+\NormalTok{                                      ,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+
+
+\CommentTok{\# Tabulating nonoutliers}
+\NormalTok{non\_outlier\_tab }\OtherTok{\textless{}{-}}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{group\_by}\NormalTok{(nonoutlier) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{summarise}\NormalTok{(}\AttributeTok{count =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{percentage =} \FunctionTok{n}\NormalTok{()}\SpecialCharTok{/}\FunctionTok{nrow}\NormalTok{(.))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mytable }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(af}\SpecialCharTok{$}\NormalTok{nonoutlier,af}\SpecialCharTok{$}\NormalTok{nonoutlier) }
+\NormalTok{mytable }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    
+##        0    1
+##   0   76    0
+##   1    0 1728
+\end{verbatim}
+
+There are 76 non-outliers in the data given the specifications prior.
+
+\begin{table}[!htbp] \centering 
+  \caption{Regression Results} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{Girl Enrolled in Formal School Fall 2007} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ Treatment & 0.517$^{***}$ & 0.372$^{***}$ \\ 
+  & (0.091) & (0.094) \\ 
+  & & \\ 
+ chagcharan & 0.178$^{**}$ & 0.086 \\ 
+  & (0.085) & (0.090) \\ 
+  & & \\ 
+ Constant & 0.087$^{*}$ & 0.328$^{***}$ \\ 
+  & (0.051) & (0.057) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 667 & 707 \\ 
+R$^{2}$ & 0.335 & 0.167 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+ & \multicolumn{2}{r}{S.E Clustered by village} \\ 
+\end{tabular} 
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Run girls regression table 4 column 1 including outliers}
+\NormalTok{reg3 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&} 
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# Run boys regression table 4 column 1including outliers}
+\NormalTok{reg4 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&} 
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Run girls regression table 4 column 1 with controls}
+\NormalTok{reg5 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{+}\NormalTok{ f07\_heads\_child\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_duration\_village\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_tajik\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_farmer\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_yrs\_ed\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_ppl\_hh\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_sheep\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_nearest\_scl}\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# Run girls regression table 4 column 1 with controls}
+\NormalTok{reg6 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{+}\NormalTok{ f07\_heads\_child\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_duration\_village\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_tajik\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_farmer\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_yrs\_ed\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_ppl\_hh\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_sheep\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_nearest\_scl}\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# Create table with regressions with controls}
+\FunctionTok{stargazer}\NormalTok{(reg1, reg2, reg5, }\AttributeTok{keep.stat =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rsq\textquotesingle{}}\NormalTok{),}\AttributeTok{title =} \StringTok{"Regression Results"}\NormalTok{,}
+          \AttributeTok{covariate.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Treatment\textquotesingle{}}\NormalTok{, }\StringTok{"chagcharan"}\NormalTok{),}
+          \AttributeTok{dep.var.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Girls\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Boys\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Girls\textquotesingle{}}\NormalTok{), }
+          \AttributeTok{omit =} \FunctionTok{c}\NormalTok{(}\StringTok{"f07\_heads\_child\_cnt"}\NormalTok{, }\StringTok{"f07\_girl\_cnt"}\NormalTok{, }\StringTok{"f07\_age\_cnt"}\NormalTok{, }\StringTok{"f07\_duration\_village\_cnt"}\NormalTok{, }\StringTok{"f07\_farsi\_cnt"}\NormalTok{, }\StringTok{"f07\_tajik\_cnt"}\NormalTok{, }\StringTok{"f07\_farmer\_cnt"}\NormalTok{, }\StringTok{"f07\_age\_head\_cnt"}\NormalTok{, }\StringTok{"f07\_yrs\_ed\_head\_cnt"}\NormalTok{, }\StringTok{"f07\_num\_ppl\_hh\_cnt"}\NormalTok{, }\StringTok{"f07\_jeribs\_cnt"}\NormalTok{, }\StringTok{"f07\_num\_sheep\_cnt"}\NormalTok{, }\StringTok{"f07\_nearest\_scl"}\NormalTok{),}
+          \AttributeTok{type =} \StringTok{\textquotesingle{}latex\textquotesingle{}}\NormalTok{, }\AttributeTok{header =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{float =} \ConstantTok{TRUE}\NormalTok{,  }\AttributeTok{notes =} \StringTok{"S.E Clustered by village"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[!htbp] \centering 
+  \caption{Regression Results} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{Girls} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ Treatment & 0.517$^{***}$ & 0.372$^{***}$ & 0.511$^{***}$ \\ 
+  & (0.091) & (0.094) & (0.083) \\ 
+  & & & \\ 
+ chagcharan & 0.178$^{**}$ & 0.086 & 0.156$^{*}$ \\ 
+  & (0.085) & (0.090) & (0.082) \\ 
+  & & & \\ 
+ Constant & 0.087$^{*}$ & 0.328$^{***}$ & $-$0.159 \\ 
+  & (0.051) & (0.057) & (0.256) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 667 & 707 & 667 \\ 
+R$^{2}$ & 0.335 & 0.167 & 0.366 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+ & \multicolumn{3}{r}{S.E Clustered by village} \\ 
+\end{tabular} 
+\end{table}
+
+\hypertarget{question-3}{%
+\section{Question 3:}\label{question-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# girls regression for column 3}
+\NormalTok{reg7 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# boys regression for column 3}
+\NormalTok{reg8 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-4}{%
+\section{Question 4:}\label{question-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# girls regression column 4}
+\NormalTok{reg9 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{+}\NormalTok{ f07\_heads\_child\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_duration\_village\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_tajik\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_farmer\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_yrs\_ed\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_ppl\_hh\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_sheep\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_nearest\_scl}\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# boys regression column 4}
+\NormalTok{reg10 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{+}\NormalTok{ f07\_heads\_child\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_duration\_village\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_tajik\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_farmer\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_yrs\_ed\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_ppl\_hh\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_sheep\_cnt }\SpecialCharTok{+} 
+\NormalTok{              f07\_nearest\_scl}\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-4b}{%
+\section{Question 4b:}\label{question-4b}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# girls regression for column 6}
+\NormalTok{reg11 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(s08\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(s08\_girls\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 s08\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# boys regression for column 6}
+\NormalTok{reg12 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(s08\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(s08\_girls\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 s08\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\CommentTok{\# girls regression for column 7}
+\NormalTok{reg13 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(s08\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{+} 
+\NormalTok{               s08\_heads\_child\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_age\_cnt }\SpecialCharTok{+}
+\NormalTok{               s08\_duration\_village\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_tajik\_cnt }\SpecialCharTok{+}
+\NormalTok{               s08\_farmer\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_yrs\_ed\_head\_cnt }\SpecialCharTok{+} 
+\NormalTok{               s08\_num\_ppl\_hh\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_num\_sheep\_cnt }\SpecialCharTok{+}
+\NormalTok{               s08\_nearest\_scl }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(s08\_girls\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 s08\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+
+\CommentTok{\# boys regression for column 7}
+\NormalTok{reg14 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(s08\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+}\NormalTok{ chagcharan }\SpecialCharTok{+} 
+\NormalTok{               s08\_heads\_child\_cnt  }\SpecialCharTok{+}\NormalTok{ s08\_age\_cnt }\SpecialCharTok{+}
+\NormalTok{               s08\_duration\_village\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_tajik\_cnt }\SpecialCharTok{+}
+\NormalTok{               s08\_farmer\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_yrs\_ed\_head\_cnt }\SpecialCharTok{+} 
+\NormalTok{               s08\_num\_ppl\_hh\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ s08\_num\_sheep\_cnt }\SpecialCharTok{+}
+\NormalTok{               s08\_nearest\_scl }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+            \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(s08\_girls\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&} 
+\NormalTok{                                 nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                                 s08\_test\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Getting mean values for column 1}
+\NormalTok{col\_1 }\OtherTok{=}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(treatment }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}
+  \FunctionTok{across}\NormalTok{(}\AttributeTok{.cols =} \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl), mean, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{(., }\DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{unlist}\NormalTok{(.)}
+
+\CommentTok{\# Getting mean values for column 2}
+\NormalTok{col\_2 }\OtherTok{=}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(treatment }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}\NormalTok{ nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}
+  \FunctionTok{across}\NormalTok{(}\AttributeTok{.cols =} \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl), mean, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{(., }\DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{unlist}\NormalTok{(.)}
+
+
+
+\CommentTok{\# Create regression functions for column 3}
+\NormalTok{reg\_function\_coef }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{    reg }\OtherTok{=} \FunctionTok{felm}\NormalTok{(x }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+               \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\NormalTok{    coef }\OtherTok{=} \FunctionTok{coef}\NormalTok{(reg)[}\DecValTok{2}\NormalTok{]}
+    \FunctionTok{return}\NormalTok{(coef)}
+\NormalTok{\}}
+
+
+\CommentTok{\# Regression function for SE}
+\NormalTok{reg\_function\_se }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  reg }\OtherTok{=} \FunctionTok{felm}\NormalTok{(x }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+             \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\NormalTok{  se }\OtherTok{=} \FunctionTok{sqrt}\NormalTok{(}\FunctionTok{diag}\NormalTok{(}\FunctionTok{vcov}\NormalTok{(reg)))[}\DecValTok{2}\NormalTok{]}
+  \FunctionTok{return}\NormalTok{(se)}
+\NormalTok{\}}
+
+
+
+\CommentTok{\# Obtain column 3 coefficients}
+\NormalTok{col\_3\_coefs }\OtherTok{=}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}
+  \FunctionTok{across}\NormalTok{(}\AttributeTok{.cols =} \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl), reg\_function\_coef)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{(., }\DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{unlist}\NormalTok{(.)}
+
+\CommentTok{\# Obtain column 3 SE}
+\NormalTok{col\_3\_se }\OtherTok{=}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}
+  \FunctionTok{across}\NormalTok{(}\AttributeTok{.cols =} \FunctionTok{c}\NormalTok{(f07\_heads\_child\_cnt, f07\_girl\_cnt, f07\_age\_cnt, f07\_duration\_village\_cnt,}
+\NormalTok{                   f07\_farsi\_cnt,  f07\_tajik\_cnt,  f07\_farmer\_cnt, }
+\NormalTok{                   f07\_age\_head\_cnt, f07\_yrs\_ed\_head\_cnt, f07\_jeribs\_cnt, }
+\NormalTok{                   f07\_num\_sheep\_cnt, f07\_nearest\_scl), reg\_function\_se)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{(., }\DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{unlist}\NormalTok{(.)}
+
+\CommentTok{\# Regression for column 7}
+\NormalTok{col\_7 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ f07\_heads\_child\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_girl\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_age\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_duration\_village\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_tajik\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_farmer\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_yrs\_ed\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_ppl\_hh\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_sheep\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_nearest\_scl}
+             \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+             \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} 
+               \FunctionTok{filter}\NormalTok{(nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ treatment }\SpecialCharTok{==} \DecValTok{0}\NormalTok{))}
+
+\CommentTok{\# Regression for column 8}
+\NormalTok{col\_8 }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ f07\_heads\_child\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_girl\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_age\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_duration\_village\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_farsi\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_tajik\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_farmer\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_age\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_yrs\_ed\_head\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_ppl\_hh\_cnt }\SpecialCharTok{+} 
+\NormalTok{               f07\_jeribs\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_num\_sheep\_cnt }\SpecialCharTok{+}\NormalTok{ f07\_nearest\_scl}
+             \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode, }
+             \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} 
+               \FunctionTok{filter}\NormalTok{(nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&} 
+\NormalTok{                        f07\_test\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ treatment }\SpecialCharTok{==} \DecValTok{0}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# further analysis regression}
+\NormalTok{reg\_fa }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ f07\_girl\_cnt }\SpecialCharTok{+} 
+\NormalTok{         f07\_nearest\_scl }\SpecialCharTok{+}\NormalTok{ f07\_girl\_cnt}\SpecialCharTok{*}\NormalTok{f07\_nearest\_scl }\SpecialCharTok{+} 
+         \FunctionTok{I}\NormalTok{(f07\_nearest\_scl}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{) }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(treatment}\SpecialCharTok{==}\DecValTok{0} \SpecialCharTok{\&} 
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#ggplot(af, aes(x = f07\_nearest\_scl, fill = as.factor(f07\_girl\_cnt))) +}
+\CommentTok{\#  geom\_histogram(color = "grey", bins = 60, alpha = .9) +}
+\CommentTok{\#  scale\_fill\_viridis\_d(option = "C") +}
+\CommentTok{\#  theme\_modern\_rc(ticks = TRUE, plot\_title\_size = 13) +}
+\CommentTok{\#  labs(x = "Miles From School", y = "Count", fill = "Is Girl", }
+\CommentTok{\#       title = "Distribution of Distance from School By Gender")}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{af }\OtherTok{=}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{dist\_near =} \FunctionTok{if\_else}\NormalTok{(f07\_nearest\_scl }\SpecialCharTok{\textless{}} \DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{),}
+               \AttributeTok{dist\_close =} \FunctionTok{if\_else}\NormalTok{(f07\_nearest\_scl }\SpecialCharTok{\textgreater{}=} \DecValTok{2} \SpecialCharTok{\&}\NormalTok{ f07\_nearest\_scl }\SpecialCharTok{\textless{}} \DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{),}
+               \AttributeTok{dist\_nclose =} \FunctionTok{if\_else}\NormalTok{(f07\_nearest\_scl }\SpecialCharTok{\textgreater{}=} \DecValTok{3} \SpecialCharTok{\&}\NormalTok{ f07\_nearest\_scl }\SpecialCharTok{\textless{}} \DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{),}
+               \AttributeTok{dist\_far =} \FunctionTok{if\_else}\NormalTok{(f07\_nearest\_scl }\SpecialCharTok{\textgreater{}=} \DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+
+\CommentTok{\# Regression for near individuals}
+\NormalTok{reg\_near\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_near }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for close individuals}
+\NormalTok{reg\_close\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_close }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for not close individuals}
+\NormalTok{reg\_nclose\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_nclose }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for far individuals}
+\NormalTok{reg\_far\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_far }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for near individuals}
+\NormalTok{reg\_near\_b}\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_near }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for close individuals}
+\NormalTok{reg\_close\_b }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_close }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for not close individuals}
+\NormalTok{reg\_nclose\_b }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_nclose }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for far individuals}
+\NormalTok{reg\_far\_b }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_formal\_school }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_far }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Regression for near individuals}
+\NormalTok{reg\_test\_near\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_near }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for close individuals}
+\NormalTok{reg\_test\_close\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_close }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for not close individuals}
+\NormalTok{reg\_test\_nclose\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_nclose }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for far individuals}
+\NormalTok{reg\_test\_far\_g }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              dist\_far }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for near individuals}
+\NormalTok{reg\_test\_near\_b}\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_near }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for close individuals}
+\NormalTok{reg\_test\_close\_b }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_close }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for not close individuals}
+\NormalTok{reg\_test\_nclose\_b }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_nclose }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+
+\CommentTok{\# Regression for far individuals}
+\NormalTok{reg\_test\_far\_b }\OtherTok{=} \FunctionTok{felm}\NormalTok{(f07\_both\_norma\_total }\SpecialCharTok{\textasciitilde{}}\NormalTok{ treatment }\SpecialCharTok{+} 
+\NormalTok{                   chagcharan }\SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|} \DecValTok{0} \SpecialCharTok{|}\NormalTok{ clustercode,}
+         \AttributeTok{data =}\NormalTok{ af }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{( }
+\NormalTok{                              f07\_observed }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              nonoutlier }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}
+\NormalTok{                              f07\_girl\_cnt }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}
+\NormalTok{                              dist\_far }\SpecialCharTok{==} \DecValTok{1}
+\NormalTok{                              ))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{stargazer}\NormalTok{(reg1, reg2, reg5, reg6, reg7, reg8, reg9, reg10, }
+          \AttributeTok{keep.stat =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rsq\textquotesingle{}}\NormalTok{), }\AttributeTok{column.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Enrollment"}\NormalTok{, }\StringTok{"Enrollment"}\NormalTok{, }\StringTok{"Enrollment"}\NormalTok{, }\StringTok{"Enrollment"}\NormalTok{, }\StringTok{"Fall Test Scores"}\NormalTok{, }\StringTok{"Fall Test Scores"}\NormalTok{, }\StringTok{"Fall Test Scores"}\NormalTok{, }\StringTok{"Fall Test Scores"}\NormalTok{),}
+          \AttributeTok{title =} \StringTok{"Table 4: Treatment Effects by Gender"}\NormalTok{,}
+          \AttributeTok{covariate.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Treatment\textquotesingle{}}\NormalTok{, }\StringTok{"chagcharan"}\NormalTok{),}
+          \CommentTok{\#dep.var.labels = c(""), }
+          \AttributeTok{type =} \StringTok{\textquotesingle{}latex\textquotesingle{}}\NormalTok{, }\AttributeTok{header =}\NormalTok{ F, }\AttributeTok{float =} \ConstantTok{TRUE}\NormalTok{,}
+          \AttributeTok{notes =}\FunctionTok{c}\NormalTok{(}\StringTok{"\textless{}sup\textgreater{}\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.1; \textless{}sup\textgreater{}\&sstarf;\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.05; \textless{}sup\textgreater{}\&sstarf;\&sstarf;\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.01"}\NormalTok{,}\StringTok{"S.E Clustered by village"}\NormalTok{), }\AttributeTok{notes.append =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[!htbp] \centering 
+  \caption{Table 4: Treatment Effects by Gender} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{8}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-9} 
+\\[-1.8ex] & \multicolumn{4}{c}{f07\_formal\_school} & \multicolumn{4}{c}{f07\_both\_norma\_total} \\ 
+ & Enrollment & Enrollment & Enrollment & Enrollment & Fall Test Scores & Fall Test Scores & Fall Test Scores & Fall Test Scores \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)\\ 
+\hline \\[-1.8ex] 
+ Treatment & 0.517$^{***}$ & 0.372$^{***}$ & 0.511$^{***}$ & 0.351$^{***}$ & 0.691$^{***}$ & 0.424$^{***}$ & 0.654$^{***}$ & 0.400$^{***}$ \\ 
+  & (0.091) & (0.094) & (0.083) & (0.088) & (0.130) & (0.107) & (0.123) & (0.091) \\ 
+  & & & & & & & & \\ 
+ chagcharan & 0.178$^{**}$ & 0.086 & 0.156$^{*}$ & 0.094 & 0.282$^{**}$ & 0.113 & 0.275$^{**}$ & 0.118 \\ 
+  & (0.085) & (0.090) & (0.082) & (0.083) & (0.123) & (0.104) & (0.117) & (0.075) \\ 
+  & & & & & & & & \\ 
+ f07\_heads\_child\_cnt &  &  & $-$0.049 & 0.028 &  &  & $-$0.156 & 0.125 \\ 
+  &  &  & (0.057) & (0.051) &  &  & (0.168) & (0.098) \\ 
+  & & & & & & & & \\ 
+ f07\_age\_cnt &  &  & 0.035$^{**}$ & 0.064$^{***}$ &  &  & 0.243$^{***}$ & 0.367$^{***}$ \\ 
+  &  &  & (0.016) & (0.019) &  &  & (0.030) & (0.021) \\ 
+  & & & & & & & & \\ 
+ f07\_duration\_village\_cnt &  &  & $-$0.001 & $-$0.001 &  &  & $-$0.003 & $-$0.003 \\ 
+  &  &  & (0.001) & (0.002) &  &  & (0.002) & (0.002) \\ 
+  & & & & & & & & \\ 
+ f07\_farsi\_cnt &  &  & $-$0.084 & 0.009 &  &  & $-$0.115 & 0.094 \\ 
+  &  &  & (0.051) & (0.069) &  &  & (0.097) & (0.141) \\ 
+  & & & & & & & & \\ 
+ f07\_tajik\_cnt &  &  & $-$0.070 & 0.087$^{**}$ &  &  & $-$0.005 & 0.173$^{***}$ \\ 
+  &  &  & (0.069) & (0.037) &  &  & (0.079) & (0.052) \\ 
+  & & & & & & & & \\ 
+ f07\_farmer\_cnt &  &  & $-$0.016 & $-$0.083$^{*}$ &  &  & 0.0002 & $-$0.082 \\ 
+  &  &  & (0.035) & (0.044) &  &  & (0.076) & (0.113) \\ 
+  & & & & & & & & \\ 
+ f07\_age\_head\_cnt &  &  & 0.0001 & $-$0.002 &  &  & $-$0.001 & 0.005 \\ 
+  &  &  & (0.002) & (0.002) &  &  & (0.004) & (0.003) \\ 
+  & & & & & & & & \\ 
+ f07\_yrs\_ed\_head\_cnt &  &  & 0.002 & 0.004 &  &  & 0.026$^{**}$ & 0.048$^{***}$ \\ 
+  &  &  & (0.006) & (0.005) &  &  & (0.011) & (0.011) \\ 
+  & & & & & & & & \\ 
+ f07\_num\_ppl\_hh\_cnt &  &  & 0.009 & $-$0.002 &  &  & 0.007 & $-$0.001 \\ 
+  &  &  & (0.007) & (0.008) &  &  & (0.007) & (0.014) \\ 
+  & & & & & & & & \\ 
+ f07\_jeribs\_cnt &  &  & $-$0.009 & 0.020 &  &  & 0.016 & 0.018 \\ 
+  &  &  & (0.013) & (0.013) &  &  & (0.030) & (0.032) \\ 
+  & & & & & & & & \\ 
+ f07\_num\_sheep\_cnt &  &  & 0.005 & 0.004 &  &  & 0.008 & 0.013$^{**}$ \\ 
+  &  &  & (0.004) & (0.003) &  &  & (0.008) & (0.005) \\ 
+  & & & & & & & & \\ 
+ f07\_nearest\_scl &  &  & $-$0.005 & $-$0.061$^{***}$ &  &  & 0.001 & $-$0.070 \\ 
+  &  &  & (0.022) & (0.023) &  &  & (0.050) & (0.049) \\ 
+  & & & & & & & & \\ 
+ Constant & 0.087$^{*}$ & 0.328$^{***}$ & $-$0.159 & 0.060 & $-$0.486$^{***}$ & 0.267$^{***}$ & $-$2.421$^{***}$ & $-$3.017$^{***}$ \\ 
+  & (0.051) & (0.057) & (0.256) & (0.254) & (0.097) & (0.091) & (0.600) & (0.204) \\ 
+  & & & & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 667 & 707 & 667 & 707 & 667 & 707 & 667 & 707 \\ 
+R$^{2}$ & 0.335 & 0.167 & 0.366 & 0.251 & 0.167 & 0.045 & 0.357 & 0.404 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{8}{r}{<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01} \\ 
+ & \multicolumn{8}{r}{S.E Clustered by village} \\ 
+\end{tabular} 
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{stargazer}\NormalTok{(reg\_near\_g,reg\_close\_g,reg\_nclose\_g, reg\_far\_g, reg\_near\_b,reg\_close\_b,reg\_nclose\_b, reg\_far\_b, }\AttributeTok{keep.stat =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rsq\textquotesingle{}}\NormalTok{),}\AttributeTok{title =} \StringTok{"Regression Results"}\NormalTok{,}
+          \AttributeTok{covariate.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Treatment\textquotesingle{}}\NormalTok{, }\StringTok{"chagcharan"}\NormalTok{), }\AttributeTok{column.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Short"}\NormalTok{, }\StringTok{"Med{-}Short"}\NormalTok{, }\StringTok{"Med{-}Long"}\NormalTok{, }\StringTok{"Long"}\NormalTok{, }\StringTok{"Short"}\NormalTok{, }\StringTok{"Med{-}Short"}\NormalTok{, }\StringTok{"Med{-}Long"}\NormalTok{, }\StringTok{"Long"}\NormalTok{),}
+          \AttributeTok{dep.var.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Whether or not the Individual is in a Formal School"}\NormalTok{), }
+          \AttributeTok{type =} \StringTok{\textquotesingle{}html\textquotesingle{}}\NormalTok{, }\AttributeTok{header =}\NormalTok{ F, }\AttributeTok{float =} \ConstantTok{TRUE}\NormalTok{,  }\AttributeTok{notes =} \FunctionTok{c}\NormalTok{(}\StringTok{"\textless{}sup\textgreater{}\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.1; \textless{}sup\textgreater{}\&sstarf;\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.05; \textless{}sup\textgreater{}\&sstarf;\&sstarf;\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.01"}\NormalTok{, }\StringTok{"S.E Clustered by village 1{-}4 (Female), 5{-}8 (Male)."}\NormalTok{, }
+          \StringTok{"Both groups have increasing distance as the number increases."}\NormalTok{), }\AttributeTok{notes.append =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Regression Results
+
+Dependent variable:
+
+Whether or not the Individual is in a Formal School
+
+Short
+
+Med-Short
+
+Med-Long
+
+Long
+
+Short
+
+Med-Short
+
+Med-Long
+
+Long
+
+(1)
+
+(2)
+
+(3)
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+(8)
+
+Treatment
+
+0.448***
+
+0.528***
+
+0.696***
+
+0.481***
+
+0.319*
+
+0.447***
+
+0.235**
+
+0.504***
+
+(0.122)
+
+(0.140)
+
+(0.073)
+
+(0.066)
+
+(0.190)
+
+(0.160)
+
+(0.093)
+
+(0.092)
+
+chagcharan
+
+0.404***
+
+0.192
+
+-0.156
+
+0.368***
+
+0.377**
+
+0.028
+
+0.058
+
+0.153
+
+(0.069)
+
+(0.117)
+
+(0.126)
+
+(0.064)
+
+(0.150)
+
+(0.152)
+
+(0.111)
+
+(0.094)
+
+Constant
+
+0.128
+
+0.022
+
+0.072
+
+0.049
+
+0.357*
+
+0.332***
+
+0.414***
+
+0.094
+
+(0.124)
+
+(0.026)
+
+(0.067)
+
+(0.046)
+
+(0.203)
+
+(0.063)
+
+(0.060)
+
+(0.084)
+
+Observations
+
+94
+
+272
+
+204
+
+123
+
+88
+
+328
+
+232
+
+149
+
+R2
+
+0.173
+
+0.400
+
+0.403
+
+0.420
+
+0.225
+
+0.213
+
+0.068
+
+0.310
+
+Note:
+
+⋆p\textless0.1; ⋆⋆p\textless0.05; ⋆⋆⋆p\textless0.01
+
+S.E Clustered by village 1-4 (Female), 5-8 (Male).
+
+Both groups have increasing distance as the number increases.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{stargazer}\NormalTok{(reg\_test\_near\_g, reg\_test\_close\_g, reg\_test\_nclose\_g,reg\_test\_far\_g, reg\_test\_near\_b, reg\_test\_close\_b, reg\_test\_nclose\_b,reg\_test\_far\_b , }\AttributeTok{keep.stat =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rsq\textquotesingle{}}\NormalTok{),}\AttributeTok{title =} \StringTok{"Regression Results"}\NormalTok{,}
+          \AttributeTok{covariate.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Treatment\textquotesingle{}}\NormalTok{, }\StringTok{"chagcharan"}\NormalTok{), }\AttributeTok{column.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Short"}\NormalTok{, }\StringTok{"Med{-}Short"}\NormalTok{, }\StringTok{"Med{-}Long"}\NormalTok{, }\StringTok{"Long"}\NormalTok{, }\StringTok{"Short"}\NormalTok{, }\StringTok{"Med{-}Short"}\NormalTok{, }\StringTok{"Med{-}Long"}\NormalTok{, }\StringTok{"Long"}\NormalTok{),}
+          \AttributeTok{dep.var.labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Total Normalized Test Score, Fall 2007"}\NormalTok{), }
+          \AttributeTok{type =} \StringTok{\textquotesingle{}html\textquotesingle{}}\NormalTok{, }\AttributeTok{header =}\NormalTok{ F, }\AttributeTok{float =} \ConstantTok{TRUE}\NormalTok{,  }\AttributeTok{notes =} \FunctionTok{c}\NormalTok{(}\StringTok{"\textless{}sup\textgreater{}\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.1; \textless{}sup\textgreater{}\&sstarf;\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.05; \textless{}sup\textgreater{}\&sstarf;\&sstarf;\&sstarf;\textless{}/sup\textgreater{}p\textless{}0.01"}\NormalTok{, }\StringTok{"S.E Clustered by village 1{-}4 (Female), 5{-}8 (Male)."}\NormalTok{, }
+          \StringTok{"Both groups have increasing distance as the number increases."}\NormalTok{), }\AttributeTok{notes.append =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Regression Results
+
+Dependent variable:
+
+Total Normalized Test Score, Fall 2007
+
+Short
+
+Med-Short
+
+Med-Long
+
+Long
+
+Short
+
+Med-Short
+
+Med-Long
+
+Long
+
+(1)
+
+(2)
+
+(3)
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+(8)
+
+Treatment
+
+1.126***
+
+0.789***
+
+0.853***
+
+0.563***
+
+0.103*
+
+0.512***
+
+0.202*
+
+0.895***
+
+(0.262)
+
+(0.233)
+
+(0.198)
+
+(0.065)
+
+(0.061)
+
+(0.159)
+
+(0.116)
+
+(0.152)
+
+chagcharan
+
+0.773***
+
+0.360*
+
+-0.277
+
+0.445***
+
+-0.027
+
+0.146
+
+-0.111
+
+0.371***
+
+(0.248)
+
+(0.184)
+
+(0.197)
+
+(0.066)
+
+(0.053)
+
+(0.114)
+
+(0.194)
+
+(0.121)
+
+Constant
+
+-1.169***
+
+-0.496***
+
+-0.399**
+
+-0.559***
+
+0.396***
+
+0.281***
+
+0.497***
+
+-0.351***
+
+(0.295)
+
+(0.134)
+
+(0.177)
+
+(0.070)
+
+(0.048)
+
+(0.040)
+
+(0.121)
+
+(0.080)
+
+Observations
+
+91
+
+259
+
+196
+
+121
+
+81
+
+290
+
+198
+
+138
+
+R2
+
+0.217
+
+0.212
+
+0.174
+
+0.193
+
+0.002
+
+0.069
+
+0.006
+
+0.221
+
+Note:
+
+⋆p\textless0.1; ⋆⋆p\textless0.05; ⋆⋆⋆p\textless0.01
+
+S.E Clustered by village 1-4 (Female), 5-8 (Male).
+
+Both groups have increasing distance as the number increases.
+
+\end{document}

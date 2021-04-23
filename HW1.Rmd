@@ -528,6 +528,41 @@ reg_test_far_b = felm(f07_both_norma_total ~ treatment +
 <div align="center">
 ```{r, results = "asis"}
 
+stargazer(reg1, reg2, reg5, reg6, reg7, reg8, reg9, reg10, 
+          keep.stat = c('n', 'rsq'), column.labels = c("      ", "      ", "      ", "      ", "      ", "      ", "      ", "      "),
+          title = "Table 4: Treatment Effects by Gender",
+          covariate.labels = c('Treatment', "chagcharan", "Household head's child",  "Age","Years family in village","Farsi","Tajik","Farmers","Age of household head", "Years of education of household head","Jeribs of land","Number of sheep","Distance to nearest formal school", "Nearest School"),
+          dep.var.labels = c("Formaly Enroled", "Fall Test Scores"), 
+          #dep.var.labels = c(""), 
+          type = 'html', header = F, float = TRUE,
+          notes =c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01","S.E Clustered by village"), notes.append = FALSE)
+
+```
+</div>
+
+<div align="center">
+```{r, results = "asis"}
+
+stargazer(col_1, col_2, col_3_coefs, col_3_se, col_7, col_8, 
+          keep.stat = c('n', 'rsq'), 
+          title = "Table 2: Treatment Effects by Gender",
+          covariate.labels = c("Household head's child", "Girl", 
+                               "Age","Years family in village","Farsi",
+                               "Tajik","Farmers","Age of household head",
+                               "Years of education of household head",
+                               "Jeribs of land","Number of sheep", 
+                               "Distance to nearest formal school"),
+          #dep.var.labels = c(""), 
+          type = 'html', header = F, float = TRUE,
+          notes =c("S.E Clustered by village"), flip = TRUE)
+
+
+```
+</div>
+
+<div align="center">
+```{r, results = "asis"}
+
 stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g, reg_near_b,reg_close_b,reg_nclose_b, reg_far_b, keep.stat = c('n', 'rsq'),title = "Regression Results",
           covariate.labels = c('Treatment', "chagcharan"), column.labels = c("Short", "Med-Short", "Med-Long", "Long", "Short", "Med-Short", "Med-Long", "Long"),
           dep.var.labels = c("Whether or not the Individual is in a Formal School"), 
