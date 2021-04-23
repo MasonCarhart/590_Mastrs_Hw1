@@ -2,7 +2,9 @@
 title: "590 HW1"
 author: "Austin Turvy Derek Holste Mason Carhart"
 date: "4/13/2021"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 
@@ -42,16 +44,9 @@ af <- af %>% mutate(nonoutlier= ifelse((f07_num_ppl_hh_cnt > 20 & f07_observed =
 non_outlier_tab <- af %>% group_by(nonoutlier) %>% 
     summarise(count = n(), percentage = n()/nrow(.))
 
-
+non_outlier_tab
 ```
 
-
-```{r}
-
-mytable <- table(af$nonoutlier,af$nonoutlier) 
-mytable 
-
-```
 There are 76 non-outliers in the data given the specifications prior.
 
 ```{r table 4 column 1 regressions, echo=FALSE, results = 'asis'}
@@ -60,21 +55,14 @@ There are 76 non-outliers in the data given the specifications prior.
 reg1 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode, 
             data = af %>% filter(f07_girl_cnt == 1 & 
                                  nonoutlier == 1 & 
-                                 f07_test_observed == 1))
+                                 f07_observed == 1))
 
 # Run boys regression for table 4 column 1
 reg2 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode, 
             data = af %>% filter(f07_girl_cnt == 0 & 
                                  nonoutlier == 1 & 
-                                 f07_test_observed == 1))
+                                 f07_observed == 1))
 
-# Create Stargazer Table
-stargazer(reg1, reg2, keep.stat = c('n', 'rsq'),title = "Regression Results",
-          covariate.labels = c('Treatment', "chagcharan"),
-          dep.var.labels = c('Girl Enrolled in Formal School Fall 2007', 'Boy Enrolled in Formal School Fall 2007'), 
-          type = 'latex', header = FALSE, float = TRUE,  notes = "S.E Clustered by village")
-
-#Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ```
 
 ```{r table 4 column 1 regressions with outliers}
@@ -82,12 +70,12 @@ stargazer(reg1, reg2, keep.stat = c('n', 'rsq'),title = "Regression Results",
 # Run girls regression table 4 column 1 including outliers
 reg3 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode, 
             data = af %>% filter(f07_girl_cnt == 1 & 
-                                 f07_test_observed == 1))
+                                 f07_observed == 1))
 
 # Run boys regression table 4 column 1including outliers
 reg4 = felm(f07_formal_school ~ treatment + chagcharan | 0 | 0 | clustercode, 
             data = af %>% filter(f07_girl_cnt == 0 & 
-                                 f07_test_observed == 1))
+                                 f07_observed == 1))
 
 ```
 
@@ -103,7 +91,7 @@ reg5 = felm(f07_formal_school ~ treatment + chagcharan + f07_heads_child_cnt +
               f07_nearest_scl| 0 | 0 | clustercode, 
             data = af %>% filter(f07_girl_cnt == 1 & 
                                  nonoutlier == 1 &
-                                 f07_test_observed == 1))
+                                 f07_observed == 1))
 
 # Run girls regression table 4 column 1 with controls
 reg6 = felm(f07_formal_school ~ treatment + chagcharan + f07_heads_child_cnt + 
@@ -114,14 +102,8 @@ reg6 = felm(f07_formal_school ~ treatment + chagcharan + f07_heads_child_cnt +
               f07_nearest_scl| 0 | 0 | clustercode, 
             data = af %>% filter(f07_girl_cnt == 0 & 
                                  nonoutlier == 1 &
-                                 f07_test_observed == 1))
+                                 f07_observed == 1))
 
-# Create table with regressions with controls
-stargazer(reg1, reg2, reg5, keep.stat = c('n', 'rsq'),title = "Regression Results",
-          covariate.labels = c('Treatment', "chagcharan"),
-          dep.var.labels = c('Girls', 'Boys', 'Girls'), 
-          omit = c("f07_heads_child_cnt", "f07_girl_cnt", "f07_age_cnt", "f07_duration_village_cnt", "f07_farsi_cnt", "f07_tajik_cnt", "f07_farmer_cnt", "f07_age_head_cnt", "f07_yrs_ed_head_cnt", "f07_num_ppl_hh_cnt", "f07_jeribs_cnt", "f07_num_sheep_cnt", "f07_nearest_scl"),
-          type = 'latex', header = FALSE, float = TRUE,  notes = "S.E Clustered by village")
 
 ```
 # Question 3:
@@ -337,12 +319,12 @@ reg_fa = felm(f07_formal_school ~ f07_girl_cnt +
 ```{r histrogram}
 
 
-ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
-  geom_histogram(color = "grey", bins = 60, alpha = .9) +
-  scale_fill_viridis_d(option = "C") +
-  theme_modern_rc(ticks = TRUE, plot_title_size = 13) +
-  labs(x = "Miles From School", y = "Count", fill = "Is Girl", 
-       title = "Distribution of Distance from School By Gender")
+# ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
+#   geom_histogram(color = "grey", bins = 60, alpha = .9) +
+#   scale_fill_viridis_d(option = "C") +
+#   theme_modern_rc(ticks = TRUE, plot_title_size = 13) +
+#   labs(x = "Miles From School", y = "Count", fill = "Is Girl", 
+#        title = "Distribution of Distance from School By Gender")
 
 ```
 
@@ -522,26 +504,98 @@ reg_test_far_b = felm(f07_both_norma_total ~ treatment +
 
 ```
 
+<div align="center">
 ```{r, results = "asis"}
 
-stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g, reg_near_b,reg_close_b,reg_nclose_b, reg_far_b, keep.stat = c('n', 'rsq'),title = "Regression Results",
-          covariate.labels = c('Treatment', "chagcharan"), column.labels = c("Short", "Med-Short", "Med-Long", "Long", "Short", "Med-Short", "Med-Long", "Long"),
+# Table 4.1
+stargazer(reg1, reg2, reg5, reg6, reg7, reg8, reg9, reg10, 
+          keep.stat = c('n', 'rsq'), 
+          column.labels = c("      ", "      ", "      ", "      ",
+                            "      ", "      ", "      ", "      "),
+          title = "Table 4: Treatment Effects by Gender",
+          covariate.labels = c('Treatment', "chagcharan", 
+                               "Household head's child",  "Age",
+                               "Years family in village","Farsi",
+                               "Tajik","Farmers","Age of household head", 
+                               "Years of education of household head",
+                               "Jeribs of land","Number of sheep",
+                               "Distance to nearest formal school", 
+                               "Nearest School"),
+          dep.var.labels = c("Formaly Enroled", "Fall Test Scores"), 
+          #dep.var.labels = c(""), 
+          type = 'html', header = F, float = TRUE,
+          notes = c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01",
+                   "S.E Clustered by village"), notes.append = FALSE)
+
+
+# Table 4b
+stargazer(reg11, reg12, reg13, reg14, 
+          keep.stat = c('n', 'rsq'), 
+          title = "Table 4b: Treatment Effects by Gender",
+          covariate.labels = c('Treatment', "chagcharan"),
+          #dep.var.labels = c(""), 
+          omit = c("s08_heads_child_cnt", "s08_girl_cnt", "s08_age_cnt",
+                   "s08_duration_village_cnt", "s08_farsi_cnt", 
+                   "s08_tajik_cnt", "s08_farmer_cnt", "s08_age_head_cnt", 
+                   "s08_yrs_ed_head_cnt", "s08_num_ppl_hh_cnt", 
+                   "s08_jeribs_cnt", "s08_num_sheep_cnt", "s08_nearest_scl",
+                   "chagcharan"),
+          type = 'html', header = F, float = TRUE,  
+          notes =c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01",
+                   "S.E Clustered by village"), notes.append = FALSE)
+
+# Table 2
+stargazer(col_1, col_2, col_3_coefs, col_3_se, col_7, col_8, 
+          keep.stat = c('n', 'rsq'), 
+          title = "Table 2: Treatment Effects by Gender",
+          covariate.labels = c("Household head's child", "Girl", 
+                               "Age","Years family in village","Farsi",
+                               "Tajik","Farmers","Age of household head",
+                               "Years of education of household head",
+                               "Jeribs of land","Number of sheep", 
+                               "Distance to nearest formal school"),
+          #dep.var.labels = c(""), 
+          type = 'html', header = F, float = TRUE,  
+          notes =c("S.E Clustered by village"), flip = TRUE)
+
+```
+</div>
+
+<div align="center">
+```{r, results = "asis"}
+
+stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g, 
+          reg_near_b,reg_close_b,reg_nclose_b, reg_far_b, 
+          keep.stat = c('n', 'rsq'),
+          title = "Further Analysis: Distance Effect on Enrollment",
+          covariate.labels = c('Treatment', "chagcharan"),
+          column.labels = c("Short", "Med-Short", "Med-Long", 
+                            "Long", "Short", "Med-Short", "Med-Long", "Long"),
           dep.var.labels = c("Whether or not the Individual is in a Formal School"), 
-          type = 'latex', header = F, float = TRUE,  notes =c( "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
+          type = 'html', header = F, float = TRUE,  
+          notes =c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01", "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
           "Both groups have increasing distance as the number increases."))
 
 ```
+</div>
 
-
+<div align="center">
 ```{r, results = "asis"}
 
-stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,reg_test_far_g, reg_test_near_b, reg_test_close_b, reg_test_nclose_b,reg_test_far_b , keep.stat = c('n', 'rsq'),title = "Regression Results",
-          covariate.labels = c('Treatment', "chagcharan"), column.labels = c("Short", "Med-Short", "Med-Long", "Long", "Short", "Med-Short", "Med-Long", "Long"),
+stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
+          reg_test_far_g, reg_test_near_b, reg_test_close_b, 
+          reg_test_nclose_b,reg_test_far_b , 
+          title = "Further Analysis: Distance Effect on Test Scores",
+          keep.stat = c('n', 'rsq'),
+          covariate.labels = c('Treatment', "chagcharan"), 
+          column.labels = c("Short", "Med-Short", "Med-Long", "Long", 
+                            "Short", "Med-Short", "Med-Long", "Long"),
           dep.var.labels = c("Total Normalized Test Score, Fall 2007"), 
-          type = 'latex', header = F, float = TRUE,  notes =c( "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
+          type = 'html', header = F, float = TRUE,
+          notes =c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01", "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
           "Both groups have increasing distance as the number increases."))
 
 ```
-
+</div>
 
 
