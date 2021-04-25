@@ -3,9 +3,10 @@ title: "590 HW1"
 author: "Austin Turvy Derek Holste Mason Carhart"
 date: "4/13/2021"
 output:
+  pdf_document:
+    latex_engine: xelatex
   html_document:
     df_print: paged
-  pdf_document: default
 ---
 
 
@@ -14,7 +15,7 @@ output:
 # Load packages
 library(pacman)
 p_load(readr, data.table, dplyr, janitor, haven, here, 
-       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes)
+       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes, tinytex)
 
 ```
 
@@ -322,6 +323,15 @@ col_8 = felm(f07_both_norma_total ~ f07_heads_child_cnt +
 ```
 
 
+```{r, results = "asis"}
+stargazer(col_1,col_2,col_3_coefs,col_3_se,col_7,col_8, keep.stat = c('n', 'rsq'),title = "Regression Results",
+          covariate.labels = c(NULL), column.labels = c(NULL),
+          dep.var.labels = c(NULL), 
+          type = 'latex', header = F, float = TRUE,  notes =c( "S.E Clustered by village"))
+
+
+```
+
 
 
 ```{r further analysis}
@@ -525,27 +535,29 @@ reg_test_far_b = felm(f07_both_norma_total ~ treatment +
 
 ```
 
-<div align="center">
+
+
+
 ```{r, results = "asis"}
 
 stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g, reg_near_b,reg_close_b,reg_nclose_b, reg_far_b, keep.stat = c('n', 'rsq'),title = "Regression Results",
           covariate.labels = c('Treatment', "chagcharan"), column.labels = c("Short", "Med-Short", "Med-Long", "Long", "Short", "Med-Short", "Med-Long", "Long"),
           dep.var.labels = c("Whether or not the Individual is in a Formal School"), 
-          type = 'html', header = F, float = TRUE,  notes = c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01", "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
-          "Both groups have increasing distance as the number increases."), notes.append = FALSE)
+          type = 'latex', header = F, float = TRUE,  notes =c( "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
+          "Both groups have increasing distance as the number increases."))
 
 ```
-</div>
-<div align="center">
+
+
 ```{r, results = "asis"}
 
 stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,reg_test_far_g, reg_test_near_b, reg_test_close_b, reg_test_nclose_b,reg_test_far_b , keep.stat = c('n', 'rsq'),title = "Regression Results",
           covariate.labels = c('Treatment', "chagcharan"), column.labels = c("Short", "Med-Short", "Med-Long", "Long", "Short", "Med-Short", "Med-Long", "Long"),
           dep.var.labels = c("Total Normalized Test Score, Fall 2007"), 
-          type = 'html', header = F, float = TRUE,  notes = c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01", "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
-          "Both groups have increasing distance as the number increases."), notes.append = FALSE)
+          type = 'latex', header = F, float = TRUE,  notes =c( "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
+          "Both groups have increasing distance as the number increases."))
 
 ```
-</div>
+
 
 

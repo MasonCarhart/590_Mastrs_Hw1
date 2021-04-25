@@ -176,28 +176,7 @@ pre code {
 <pre class="r"><code># Load packages
 library(pacman)
 p_load(readr, data.table, dplyr, janitor, haven, here, 
-       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes)</code></pre>
-<pre><code>## Installing package into &#39;C:/Users/MASEl/Documents/R/win-library/4.0&#39;
-## (as &#39;lib&#39; is unspecified)</code></pre>
-<pre><code>## also installing the dependency &#39;dplyr&#39;</code></pre>
-<pre><code>## Warning: unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.0:
-##   cannot open URL &#39;http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.0/PACKAGES&#39;</code></pre>
-<pre><code>## package &#39;dplyr&#39; successfully unpacked and MD5 sums checked</code></pre>
-<pre><code>## Warning: cannot remove prior installation of package &#39;dplyr&#39;</code></pre>
-<pre><code>## Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying C:
-## \Users\MASEl\Documents\R\win-library\4.0\00LOCK\dplyr\libs\x64\dplyr.dll to C:
-## \Users\MASEl\Documents\R\win-library\4.0\dplyr\libs\x64\dplyr.dll: Permission
-## denied</code></pre>
-<pre><code>## Warning: restored &#39;dplyr&#39;</code></pre>
-<pre><code>## package &#39;tidyverse&#39; successfully unpacked and MD5 sums checked
-## 
-## The downloaded binary packages are in
-##  C:\Users\MASEl\AppData\Local\Temp\Rtmp0uvXI5\downloaded_packages</code></pre>
-<pre><code>## 
-## tidyverse installed</code></pre>
-<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning in p_load(readr, data.table, dplyr, janitor, haven, here, tidyverse, : Failed to install/load:
-## tidyverse</code></pre>
+       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes, tinytex)</code></pre>
 <pre class="r"><code># Load data
 af = read_dta(here(&quot;afghanistan_anonymized_data.dta&quot;)) </code></pre>
 <ol style="list-style-type: decimal">
@@ -216,7 +195,6 @@ af &lt;- af %&gt;% mutate(nonoutlier= ifelse((f07_num_ppl_hh_cnt &gt; 20 &amp; f
 # Tabulating nonoutliers
 non_outlier_tab &lt;- af %&gt;% group_by(nonoutlier) %&gt;% 
     summarise(count = n(), percentage = n()/nrow(.))</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre class="r"><code>mytable &lt;- table(af$nonoutlier,af$nonoutlier) 
 mytable </code></pre>
 <pre><code>##    
@@ -438,6 +416,503 @@ col_8 = felm(f07_both_norma_total ~ f07_heads_child_cnt +
              data = af %&gt;% 
                filter(nonoutlier == 1 &amp; f07_observed == 1 &amp; 
                         f07_test_observed == 1 &amp; treatment == 0))</code></pre>
+<table style="text-align:center">
+<caption>
+<strong>Regression Results</strong>
+</caption>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+f07_formal_school
+</td>
+<td>
+f07_both_norma_total
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_heads_child_cnt
+</td>
+<td>
+0.038
+</td>
+<td>
+-0.090
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.061)
+</td>
+<td>
+(0.113)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_girl_cnt
+</td>
+<td>
+-0.208<sup>***</sup>
+</td>
+<td>
+-0.682<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.080)
+</td>
+<td>
+(0.102)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_age_cnt
+</td>
+<td>
+0.046<sup>***</sup>
+</td>
+<td>
+0.287<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.017)
+</td>
+<td>
+(0.018)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_duration_village_cnt
+</td>
+<td>
+-0.001
+</td>
+<td>
+-0.005<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.001)
+</td>
+<td>
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_farsi_cnt
+</td>
+<td>
+-0.039
+</td>
+<td>
+0.074
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.074)
+</td>
+<td>
+(0.119)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_tajik_cnt
+</td>
+<td>
+-0.006
+</td>
+<td>
+0.042
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.078)
+</td>
+<td>
+(0.065)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_farmer_cnt
+</td>
+<td>
+-0.050
+</td>
+<td>
+-0.020
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.081)
+</td>
+<td>
+(0.120)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_age_head_cnt
+</td>
+<td>
+-0.004
+</td>
+<td>
+-0.004<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.003)
+</td>
+<td>
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_yrs_ed_head_cnt
+</td>
+<td>
+0.001
+</td>
+<td>
+0.036<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.006)
+</td>
+<td>
+(0.007)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_num_ppl_hh_cnt
+</td>
+<td>
+0.004
+</td>
+<td>
+-0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.006)
+</td>
+<td>
+(0.011)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_jeribs_cnt
+</td>
+<td>
+0.022<sup>***</sup>
+</td>
+<td>
+0.056<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.008)
+</td>
+<td>
+(0.011)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_num_sheep_cnt
+</td>
+<td>
+0.010<sup>***</sup>
+</td>
+<td>
+0.016<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.002)
+</td>
+<td>
+(0.007)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+f07_nearest_scl
+</td>
+<td>
+-0.060
+</td>
+<td>
+-0.089<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.043)
+</td>
+<td>
+(0.037)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.246
+</td>
+<td>
+-1.649<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.324)
+</td>
+<td>
+(0.369)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+708
+</td>
+<td>
+653
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.155
+</td>
+<td>
+0.401
+</td>
+</tr>
+<tr>
+<td colspan="3" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="2" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="2" style="text-align:right">
+S.E Clustered by village
+</td>
+</tr>
+</table>
 <pre class="r"><code># further analysis regression
 reg_fa = felm(f07_formal_school ~ f07_girl_cnt + 
          f07_nearest_scl + f07_girl_cnt*f07_nearest_scl + 
@@ -614,836 +1089,16 @@ reg_test_far_b = felm(f07_both_norma_total ~ treatment +
                               f07_girl_cnt == 0 &amp;
                               dist_far == 1
                               ))</code></pre>
-<div align="center">
 <pre class="r"><code>stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g, reg_near_b,reg_close_b,reg_nclose_b, reg_far_b, keep.stat = c(&#39;n&#39;, &#39;rsq&#39;),title = &quot;Regression Results&quot;,
           covariate.labels = c(&#39;Treatment&#39;, &quot;chagcharan&quot;), column.labels = c(&quot;Short&quot;, &quot;Med-Short&quot;, &quot;Med-Long&quot;, &quot;Long&quot;, &quot;Short&quot;, &quot;Med-Short&quot;, &quot;Med-Long&quot;, &quot;Long&quot;),
           dep.var.labels = c(&quot;Whether or not the Individual is in a Formal School&quot;), 
-          type = &#39;html&#39;, header = F, float = TRUE,  notes = c(&quot;&lt;sup&gt;&amp;sstarf;&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.01&quot;, &quot;S.E Clustered by village 1-4 (Female), 5-8 (Male).&quot;, 
-          &quot;Both groups have increasing distance as the number increases.&quot;), notes.append = FALSE)</code></pre>
-<table style="text-align:center">
-<caption>
-<strong>Regression Results</strong>
-</caption>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8">
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="8" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8">
-Whether or not the Individual is in a Formal School
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-Short
-</td>
-<td>
-Med-Short
-</td>
-<td>
-Med-Long
-</td>
-<td>
-Long
-</td>
-<td>
-Short
-</td>
-<td>
-Med-Short
-</td>
-<td>
-Med-Long
-</td>
-<td>
-Long
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(1)
-</td>
-<td>
-(2)
-</td>
-<td>
-(3)
-</td>
-<td>
-(4)
-</td>
-<td>
-(5)
-</td>
-<td>
-(6)
-</td>
-<td>
-(7)
-</td>
-<td>
-(8)
-</td>
-</tr>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Treatment
-</td>
-<td>
-0.448<sup>***</sup>
-</td>
-<td>
-0.528<sup>***</sup>
-</td>
-<td>
-0.696<sup>***</sup>
-</td>
-<td>
-0.481<sup>***</sup>
-</td>
-<td>
-0.319<sup>*</sup>
-</td>
-<td>
-0.447<sup>***</sup>
-</td>
-<td>
-0.235<sup>**</sup>
-</td>
-<td>
-0.504<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.122)
-</td>
-<td>
-(0.140)
-</td>
-<td>
-(0.073)
-</td>
-<td>
-(0.066)
-</td>
-<td>
-(0.190)
-</td>
-<td>
-(0.160)
-</td>
-<td>
-(0.093)
-</td>
-<td>
-(0.092)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-chagcharan
-</td>
-<td>
-0.404<sup>***</sup>
-</td>
-<td>
-0.192
-</td>
-<td>
--0.156
-</td>
-<td>
-0.368<sup>***</sup>
-</td>
-<td>
-0.377<sup>**</sup>
-</td>
-<td>
-0.028
-</td>
-<td>
-0.058
-</td>
-<td>
-0.153
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.069)
-</td>
-<td>
-(0.117)
-</td>
-<td>
-(0.126)
-</td>
-<td>
-(0.064)
-</td>
-<td>
-(0.150)
-</td>
-<td>
-(0.152)
-</td>
-<td>
-(0.111)
-</td>
-<td>
-(0.094)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
-0.128
-</td>
-<td>
-0.022
-</td>
-<td>
-0.072
-</td>
-<td>
-0.049
-</td>
-<td>
-0.357<sup>*</sup>
-</td>
-<td>
-0.332<sup>***</sup>
-</td>
-<td>
-0.414<sup>***</sup>
-</td>
-<td>
-0.094
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.124)
-</td>
-<td>
-(0.026)
-</td>
-<td>
-(0.067)
-</td>
-<td>
-(0.046)
-</td>
-<td>
-(0.203)
-</td>
-<td>
-(0.063)
-</td>
-<td>
-(0.060)
-</td>
-<td>
-(0.084)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-94
-</td>
-<td>
-272
-</td>
-<td>
-204
-</td>
-<td>
-123
-</td>
-<td>
-88
-</td>
-<td>
-328
-</td>
-<td>
-232
-</td>
-<td>
-149
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.173
-</td>
-<td>
-0.400
-</td>
-<td>
-0.403
-</td>
-<td>
-0.420
-</td>
-<td>
-0.225
-</td>
-<td>
-0.213
-</td>
-<td>
-0.068
-</td>
-<td>
-0.310
-</td>
-</tr>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td colspan="8" style="text-align:right">
-<sup>⋆</sup>p&lt;0.1; <sup>⋆⋆</sup>p&lt;0.05; <sup>⋆⋆⋆</sup>p&lt;0.01
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8" style="text-align:right">
-S.E Clustered by village 1-4 (Female), 5-8 (Male).
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8" style="text-align:right">
-Both groups have increasing distance as the number increases.
-</td>
-</tr>
-</table>
-</div>
-<div align="center">
+          type = &#39;latex&#39;, header = F, float = TRUE,  notes =c( &quot;S.E Clustered by village 1-4 (Female), 5-8 (Male).&quot;, 
+          &quot;Both groups have increasing distance as the number increases.&quot;))</code></pre>
 <pre class="r"><code>stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,reg_test_far_g, reg_test_near_b, reg_test_close_b, reg_test_nclose_b,reg_test_far_b , keep.stat = c(&#39;n&#39;, &#39;rsq&#39;),title = &quot;Regression Results&quot;,
           covariate.labels = c(&#39;Treatment&#39;, &quot;chagcharan&quot;), column.labels = c(&quot;Short&quot;, &quot;Med-Short&quot;, &quot;Med-Long&quot;, &quot;Long&quot;, &quot;Short&quot;, &quot;Med-Short&quot;, &quot;Med-Long&quot;, &quot;Long&quot;),
           dep.var.labels = c(&quot;Total Normalized Test Score, Fall 2007&quot;), 
-          type = &#39;html&#39;, header = F, float = TRUE,  notes = c(&quot;&lt;sup&gt;&amp;sstarf;&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.01&quot;, &quot;S.E Clustered by village 1-4 (Female), 5-8 (Male).&quot;, 
-          &quot;Both groups have increasing distance as the number increases.&quot;), notes.append = FALSE)</code></pre>
-<table style="text-align:center">
-<caption>
-<strong>Regression Results</strong>
-</caption>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8">
-<em>Dependent variable:</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td colspan="8" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8">
-Total Normalized Test Score, Fall 2007
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-Short
-</td>
-<td>
-Med-Short
-</td>
-<td>
-Med-Long
-</td>
-<td>
-Long
-</td>
-<td>
-Short
-</td>
-<td>
-Med-Short
-</td>
-<td>
-Med-Long
-</td>
-<td>
-Long
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(1)
-</td>
-<td>
-(2)
-</td>
-<td>
-(3)
-</td>
-<td>
-(4)
-</td>
-<td>
-(5)
-</td>
-<td>
-(6)
-</td>
-<td>
-(7)
-</td>
-<td>
-(8)
-</td>
-</tr>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Treatment
-</td>
-<td>
-1.126<sup>***</sup>
-</td>
-<td>
-0.789<sup>***</sup>
-</td>
-<td>
-0.853<sup>***</sup>
-</td>
-<td>
-0.563<sup>***</sup>
-</td>
-<td>
-0.103<sup>*</sup>
-</td>
-<td>
-0.512<sup>***</sup>
-</td>
-<td>
-0.202<sup>*</sup>
-</td>
-<td>
-0.895<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.262)
-</td>
-<td>
-(0.233)
-</td>
-<td>
-(0.198)
-</td>
-<td>
-(0.065)
-</td>
-<td>
-(0.061)
-</td>
-<td>
-(0.159)
-</td>
-<td>
-(0.116)
-</td>
-<td>
-(0.152)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-chagcharan
-</td>
-<td>
-0.773<sup>***</sup>
-</td>
-<td>
-0.360<sup>*</sup>
-</td>
-<td>
--0.277
-</td>
-<td>
-0.445<sup>***</sup>
-</td>
-<td>
--0.027
-</td>
-<td>
-0.146
-</td>
-<td>
--0.111
-</td>
-<td>
-0.371<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.248)
-</td>
-<td>
-(0.184)
-</td>
-<td>
-(0.197)
-</td>
-<td>
-(0.066)
-</td>
-<td>
-(0.053)
-</td>
-<td>
-(0.114)
-</td>
-<td>
-(0.194)
-</td>
-<td>
-(0.121)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Constant
-</td>
-<td>
--1.169<sup>***</sup>
-</td>
-<td>
--0.496<sup>***</sup>
-</td>
-<td>
--0.399<sup>**</sup>
-</td>
-<td>
--0.559<sup>***</sup>
-</td>
-<td>
-0.396<sup>***</sup>
-</td>
-<td>
-0.281<sup>***</sup>
-</td>
-<td>
-0.497<sup>***</sup>
-</td>
-<td>
--0.351<sup>***</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-(0.295)
-</td>
-<td>
-(0.134)
-</td>
-<td>
-(0.177)
-</td>
-<td>
-(0.070)
-</td>
-<td>
-(0.048)
-</td>
-<td>
-(0.040)
-</td>
-<td>
-(0.121)
-</td>
-<td>
-(0.080)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-Observations
-</td>
-<td>
-91
-</td>
-<td>
-259
-</td>
-<td>
-196
-</td>
-<td>
-121
-</td>
-<td>
-81
-</td>
-<td>
-290
-</td>
-<td>
-198
-</td>
-<td>
-138
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-R<sup>2</sup>
-</td>
-<td>
-0.217
-</td>
-<td>
-0.212
-</td>
-<td>
-0.174
-</td>
-<td>
-0.193
-</td>
-<td>
-0.002
-</td>
-<td>
-0.069
-</td>
-<td>
-0.006
-</td>
-<td>
-0.221
-</td>
-</tr>
-<tr>
-<td colspan="9" style="border-bottom: 1px solid black">
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-<em>Note:</em>
-</td>
-<td colspan="8" style="text-align:right">
-<sup>⋆</sup>p&lt;0.1; <sup>⋆⋆</sup>p&lt;0.05; <sup>⋆⋆⋆</sup>p&lt;0.01
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8" style="text-align:right">
-S.E Clustered by village 1-4 (Female), 5-8 (Male).
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-</td>
-<td colspan="8" style="text-align:right">
-Both groups have increasing distance as the number increases.
-</td>
-</tr>
-</table>
-</div>
+          type = &#39;latex&#39;, header = F, float = TRUE,  notes =c( &quot;S.E Clustered by village 1-4 (Female), 5-8 (Male).&quot;, 
+          &quot;Both groups have increasing distance as the number increases.&quot;))</code></pre>
 </div>
 
 

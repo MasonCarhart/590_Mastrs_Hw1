@@ -1,0 +1,7 @@
+---
+title: "The Function"
+author: "Mason Carhart"
+date: "4/22/2021"
+output: html_document
+---
+Yes()
