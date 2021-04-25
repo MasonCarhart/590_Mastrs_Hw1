@@ -28,8 +28,7 @@ af = read_dta(here("afghanistan_anonymized_data.dta"))
 ```
 
 
-1.
-An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
+
 
 ```{r, Create nonoutlier columns}
 # Create nonoutlier column
@@ -604,6 +603,9 @@ stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
 </div>
 
 #**Written Questions:**
+
+##Outlier question 1
+An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
 
 ##Table 4 Question 5:
 Both of our coefficient estimates were very similar as the treatment for girls was off by 0.004 and the treatment for men is 0.001. The standard error for women was exactly the same while the standard error for men is unknown from table four.
