@@ -3,6 +3,8 @@ title: "590 HW1"
 author: "Austin Turvy Derek Holste Mason Carhart"
 date: "4/13/2021"
 output:
+  pdf_document: 
+    latex_engine: xelatex
   html_document:
     df_print: paged
 ---
@@ -13,7 +15,7 @@ output:
 # Load packages
 library(pacman)
 p_load(readr, data.table, dplyr, janitor, haven, here, 
-       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes)
+       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes, tinytex)
 
 ```
 
@@ -319,12 +321,12 @@ reg_fa = felm(f07_formal_school ~ f07_girl_cnt +
 ```{r histrogram}
 
 
-# ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
-#   geom_histogram(color = "grey", bins = 60, alpha = .9) +
-#   scale_fill_viridis_d(option = "C") +
-#   theme_modern_rc(ticks = TRUE, plot_title_size = 13) +
-#   labs(x = "Miles From School", y = "Count", fill = "Is Girl", 
-#        title = "Distribution of Distance from School By Gender")
+ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
+  geom_histogram(color = "grey", bins = 60, alpha = .9) +
+  scale_fill_viridis_d(option = "C") +
+  theme_minimal() +
+  labs(x = "Miles From School", y = "Count", fill = "Is Girl",
+       title = "Distribution of Distance from School By Gender")
 
 ```
 
@@ -523,9 +525,11 @@ stargazer(reg1, reg2, reg5, reg6, reg7, reg8, reg9, reg10,
                                "Nearest School"),
           dep.var.labels = c("Formaly Enroled", "Fall Test Scores"), 
           #dep.var.labels = c(""), 
-          type = 'html', header = F, float = TRUE,
-          notes = c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01",
-                   "S.E Clustered by village"), notes.append = FALSE)
+          type = 'latex', header = F, float = TRUE, 
+          font.size = "small",
+          column.sep.width = "-15pt",
+          omit.stat=c("f", "ser"),
+          notes = c("S.E Clustered by village"), notes.append = FALSE)
 
 
 # Table 4b
@@ -540,9 +544,8 @@ stargazer(reg11, reg12, reg13, reg14,
                    "s08_yrs_ed_head_cnt", "s08_num_ppl_hh_cnt", 
                    "s08_jeribs_cnt", "s08_num_sheep_cnt", "s08_nearest_scl",
                    "chagcharan"),
-          type = 'html', header = F, float = TRUE,  
-          notes =c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01",
-                   "S.E Clustered by village"), notes.append = FALSE)
+          type = 'latex', header = F, float = TRUE,  
+          notes =c("S.E Clustered by village"), notes.append = FALSE)
 
 # Table 2
 stargazer(col_1, col_2, col_3_coefs, col_3_se, col_7, col_8, 
@@ -555,7 +558,7 @@ stargazer(col_1, col_2, col_3_coefs, col_3_se, col_7, col_8,
                                "Jeribs of land","Number of sheep", 
                                "Distance to nearest formal school"),
           #dep.var.labels = c(""), 
-          type = 'html', header = F, float = TRUE,  
+          type = 'latex', header = F, float = TRUE,  
           notes =c("S.E Clustered by village"), flip = TRUE)
 
 ```
@@ -572,8 +575,9 @@ stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g,
           column.labels = c("Short", "Med-Short", "Med-Long", 
                             "Long", "Short", "Med-Short", "Med-Long", "Long"),
           dep.var.labels = c("Whether or not the Individual is in a Formal School"), 
-          type = 'html', header = F, float = TRUE,  
-          notes =c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01", "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
+          type = 'latex', header = F, float = TRUE, 
+          column.sep.width = "-10pt",
+          notes =c("S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
           "Both groups have increasing distance as the number increases."))
 
 ```
@@ -591,8 +595,9 @@ stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
           column.labels = c("Short", "Med-Short", "Med-Long", "Long", 
                             "Short", "Med-Short", "Med-Long", "Long"),
           dep.var.labels = c("Total Normalized Test Score, Fall 2007"), 
-          type = 'html', header = F, float = TRUE,
-          notes =c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01", "S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
+          type = 'latex', header = F, float = TRUE,
+          column.sep.width = "-10pt",
+          notes =c("S.E Clustered by village 1-4 (Female), 5-8 (Male).", 
           "Both groups have increasing distance as the number increases."))
 
 ```
