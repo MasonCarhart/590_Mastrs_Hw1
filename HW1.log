@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.24)  25 APR 2021 17:04
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.24)  25 APR 2021 17:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,9 +630,6 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
-
-LaTeX Warning: Label `' multiply defined.
-
 )
 \openout1 = `HW1.aux'.
 
@@ -1083,11 +1080,11 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 757.
 
-Overfull \hbox (44.82497pt too wide) in paragraph at lines 885--916
+Overfull \hbox (44.82497pt too wide) in paragraph at lines 886--917
  [][] 
  []
 
-[11] [12] [13] [14] [15] [16] [17] [18] (./HW1.aux)
+[11] [12] [13] [14] [15] [16] [17] (./HW1.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1095,12 +1092,12 @@ Package rerunfilecheck Info: File `HW1.out' has not changed.
 (rerunfilecheck)             Checksum: 2523F88D23F4BE0D2101948F7EE050D8;311.
  ) 
 Here is how much of TeX's memory you used:
- 17687 strings out of 478918
- 312319 string characters out of 5864811
- 839220 words of memory out of 5000000
- 37261 multiletter control sequences out of 15000+600000
+ 17688 strings out of 478918
+ 312340 string characters out of 5864811
+ 829249 words of memory out of 5000000
+ 37262 multiletter control sequences out of 15000+600000
  410940 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,11n,122p,1824b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,11n,122p,395b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on HW1.pdf (18 pages).
+Output written on HW1.pdf (17 pages).
