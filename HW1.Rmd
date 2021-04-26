@@ -15,8 +15,9 @@ output:
 # Load packages
 library(pacman)
 p_load(readr, data.table, dplyr, janitor, haven, here, 
-       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes, tinytex)
-
+       tidyverse, skimr, lfe, stargazer, quantreg, hrbrthemes, tinytex,kableExtra)
+star = stargazer(attitude, header = F)
+star = sub('^.+\\caption.+$','', star)
 ```
 
 
@@ -199,13 +200,13 @@ col_1 = af %>%
   select(
     c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt,  
                    f07_num_sheep_cnt, f07_nearest_scl)
   ) %>% 
   mutate(
   across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt, 
                    f07_num_sheep_cnt, f07_nearest_scl), mean, na.rm = TRUE)
   ) %>% head(., 1) %>% unlist(.)
 
@@ -215,13 +216,13 @@ col_2 = af %>%
   select(
     c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt, 
                    f07_num_sheep_cnt, f07_nearest_scl)
   ) %>% 
   mutate(
   across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt, 
                    f07_num_sheep_cnt, f07_nearest_scl), mean, na.rm = TRUE)
   ) %>% head(., 1) %>% unlist(.)
 
@@ -252,13 +253,13 @@ col_3_coefs = af %>%
   select(
     c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt, 
                    f07_num_sheep_cnt, f07_nearest_scl)
   ) %>% 
   mutate(
   across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt, 
                    f07_num_sheep_cnt, f07_nearest_scl), reg_function_coef)
   ) %>% head(., 1) %>% unlist(.)
 
@@ -268,13 +269,13 @@ col_3_se = af %>%
   select(
     c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt,  
                    f07_num_sheep_cnt, f07_nearest_scl)
   ) %>% 
   mutate(
   across(.cols = c(f07_heads_child_cnt, f07_girl_cnt, f07_age_cnt, f07_duration_village_cnt,
                    f07_farsi_cnt,  f07_tajik_cnt,  f07_farmer_cnt, 
-                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_jeribs_cnt, 
+                   f07_age_head_cnt, f07_yrs_ed_head_cnt, f07_num_ppl_hh_cnt, f07_jeribs_cnt, 
                    f07_num_sheep_cnt, f07_nearest_scl), reg_function_se)
   ) %>% head(., 1) %>% unlist(.)
 
@@ -507,7 +508,6 @@ reg_test_far_b = felm(f07_both_norma_total ~ treatment +
 
 <div align="center">
 ```{r, results = "asis"}
-
 # Table 4.1
 stargazer(reg1, reg2, reg5, reg6, reg7, reg8, reg9, reg10, 
           keep.stat = c('n', 'rsq'), 
@@ -547,7 +547,7 @@ stargazer(reg11, reg12, reg13, reg14,
           notes =c("S.E Clustered by village"), notes.append = FALSE)
 
 # Table 2
-stargazer(col_1, col_2, col_3_coefs, col_3_se, col_7, col_8, 
+stargazer(col_7, col_8, 
           keep.stat = c('n', 'rsq'), 
           title = "Table 2: Treatment Effects by Gender",
           covariate.labels = c("Household head's child", "Girl", 
@@ -556,10 +556,27 @@ stargazer(col_1, col_2, col_3_coefs, col_3_se, col_7, col_8,
                                "Years of education of household head",
                                "Jeribs of land","Number of sheep", 
                                "Distance to nearest formal school"),
-          #dep.var.labels = c(""), 
+          dep.var.labels = c("Formal enrollment","Test Scores"), 
           type = 'latex', header = F, float = TRUE,  
-          notes =c("S.E Clustered by village"), flip = TRUE)
+          notes =c("S.E Clustered by village"), flip = TRUE, out.header = FALSE)
 
+
+col_1_df <- data.frame(name = c("Household head's child", "Girl", 
+                               "Age","Years family in village","Farsi",
+                               "Tajik","Farmers","Age of household head",
+                               "Years of education of household head", "Number of People in Household", 
+                               "Jeribs of land","Number of sheep", 
+                               "Distance to nearest formal school"))
+col_1_df <- col_1_df %>% mutate(Treatment_avg = c(col_1))
+
+col_1_df <- col_1_df %>% mutate(Control_avg = c(col_2))
+col_1_df <- col_1_df %>% mutate(Estimated_diff = c(col_3_coefs))
+col_1_df <- col_1_df %>% mutate(Estimated_diff_se = c(col_3_se))
+
+
+col_1_df %>% kbl(col.names = c("Name","Treatment Avg",
+                               "Control Avg", "Estimated Diff",
+                               "Estimated Difference SE"),caption = "Table 2") %>% kable_paper("hover", full_width=F)
 ```
 </div>
 
@@ -601,6 +618,8 @@ stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
 
 ```
 </div>
+
+\newpage
 
 #**Written Questions:**
 
