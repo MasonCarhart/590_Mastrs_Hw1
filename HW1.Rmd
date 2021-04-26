@@ -549,7 +549,7 @@ stargazer(reg11, reg12, reg13, reg14,
 # Table 2
 stargazer(col_7, col_8, 
           keep.stat = c('n', 'rsq'), 
-          title = "Table 2: Treatment Effects by Gender",
+          title = "Table 2: Demographic Characteristics By Research Groups",
           covariate.labels = c("Household head's child", "Girl", 
                                "Age","Years family in village","Farsi",
                                "Tajik","Farmers","Age of household head",
@@ -576,7 +576,7 @@ col_1_df <- col_1_df %>% mutate(Estimated_diff_se = c(col_3_se))
 
 col_1_df %>% kbl(col.names = c("Name","Treatment Avg",
                                "Control Avg", "Estimated Diff",
-                               "Estimated Difference SE"),caption = "Table 2") %>% kable_paper("hover", full_width=F)
+                               "Estimated Difference SE"),caption = "Table 2: Demographic Characteristics By Research Groups") %>% kable_paper("hover", full_width=F)
 ```
 </div>
 
