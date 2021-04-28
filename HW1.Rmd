@@ -318,17 +318,6 @@ reg_fa = felm(f07_formal_school ~ f07_girl_cnt +
 
 ```
 
-```{r histrogram}
-
-
-ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
-  geom_histogram(color = "grey", bins = 60, alpha = .9) +
-  scale_fill_viridis_d(option = "C") +
-  theme_minimal() +
-  labs(x = "Miles From School", y = "Count", fill = "Is Girl",
-       title = "Distribution of Distance from School By Gender")
-
-```
 
 
 ```{r further analysis 2}
@@ -618,6 +607,18 @@ stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
 
 ```
 </div>
+
+```{r histrogram}
+
+
+ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
+  geom_histogram(color = "grey", bins = 60, alpha = .9) +
+  scale_fill_viridis_d(option = "C") +
+  theme_minimal() +
+  labs(x = "Miles From School", y = "Count", fill = "Is Girl",
+       title = "Distribution of Distance from School By Gender")
+
+```
 
 \newpage
 
