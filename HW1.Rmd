@@ -634,7 +634,7 @@ Both of our coefficient estimates were very similar as the treatment for girls a
 ## Table 4 Column 1 Question 6:
 The coefficients on all estimates are minimally different with the largest change being the difference between the treated groups in column 2 and 4, (the difference is .018). The standard errors are also negligibly different. 
 
-```{r echo = false}
+```{r echo = FALSE}
 print(summary(reg3))
 print(summary(reg4))
 ```
