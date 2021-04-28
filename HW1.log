@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.24)  28 APR 2021 13:35
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.24)  28 APR 2021 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1076,21 +1076,7 @@ Overfull \hbox (44.82497pt too wide) in paragraph at lines 869--900
 [10] [11] [12] [13] [14]
 File: HW1_files/figure-latex/histrogram-1.pdf Graphic file (type pdf)
 <use HW1_files/figure-latex/histrogram-1.pdf>
-[15] [16]
-Overfull \hbox (354.49498pt too wide) in paragraph at lines 1076--1076
-[]\TU/lmtt/m/n/10 ##    felm(formula = f07_formal_school ~ treatment + chagchar
-an | 0 |      0 | clustercode, data = af %>% filter(f07_girl_cnt == 1 &      f0
-7_observed == 1))[] 
- []
-
-
-Overfull \hbox (354.49498pt too wide) in paragraph at lines 1100--1100
-[]\TU/lmtt/m/n/10 ##    felm(formula = f07_formal_school ~ treatment + chagchar
-an | 0 |      0 | clustercode, data = af %>% filter(f07_girl_cnt == 0 &      f0
-7_observed == 1))[] 
- []
-
-[17] [18] (./HW1.aux)
+[15] [16] [17] (./HW1.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1104,6 +1090,6 @@ Here is how much of TeX's memory you used:
  37271 multiletter control sequences out of 15000+600000
  410948 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,11n,122p,395b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,11n,122p,395b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on HW1.pdf (18 pages).
+Output written on HW1.pdf (17 pages).
