@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.24)  28 APR 2021 14:41
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.4.24)  28 APR 2021 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -990,87 +990,79 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 7.99915pt on input line 127.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.99936pt on input line 127.
-
-Overfull \hbox (637.99498pt too wide) in paragraph at lines 159--159
-[]\TU/lmtt/m/n/10 ## Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mea
-n} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c
-}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\[] 
- []
-
 [1
 
-] [2] [3]
+] [2]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 369.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 340.
+[3]
+Underfull \vbox (badness 10000) detected at line 411
+ []
 
-Underfull \vbox (badness 3148) detected at line 440
+
+Underfull \vbox (badness 10000) detected at line 411
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 440
+Underfull \vbox (badness 2253) detected at line 423
+ []
+
+[5]
+Underfull \vbox (badness 2343) detected at line 512
+ []
+
+[6]
+Underfull \vbox (badness 4595) detected at line 596
+ []
+
+[7]
+Underfull \vbox (badness 10000) detected at line 596
  []
 
 
-Underfull \vbox (badness 10000) detected at line 440
+Underfull \vbox (badness 10000) detected at line 596
  []
 
-[5] [6]
-Underfull \vbox (badness 10000) detected at line 541
- []
-
-
-Underfull \vbox (badness 10000) detected at line 541
- []
-
-[7] [8]
-Underfull \vbox (badness 3343) detected at line 650
- []
-
-[9]
+[8]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 656.
+(Font)              scaled to size 9.0pt on input line 627.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 656.
+(Font)              scaled to size 5.0pt on input line 627.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00082pt on input line 656.
+(Font)              scaled to size 9.00082pt on input line 627.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 656.
+(Font)              scaled to size 5.00046pt on input line 627.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 656.
+(Font)              scaled to size 8.99904pt on input line 627.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 656.
+(Font)              scaled to size 4.99947pt on input line 627.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 741.
+(Font)              scaled to size 7.0pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 741.
+(Font)              scaled to size 10.00092pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 741.
+(Font)              scaled to size 7.00064pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 741.
+(Font)              scaled to size 9.99893pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 741.
-
-Overfull \hbox (44.82497pt too wide) in paragraph at lines 870--901
+(Font)              scaled to size 6.99925pt on input line 712.
+[9] [10]
+Overfull \hbox (44.82497pt too wide) in paragraph at lines 841--872
  [][] 
  []
 
-[10] [11] [12] [13] [14]
-File: HW1_files/figure-latex/histrogram-1.pdf Graphic file (type pdf)
-<use HW1_files/figure-latex/histrogram-1.pdf>
-[15] [16] [17] (./HW1.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `HW1.out' has not changed.
-(rerunfilecheck)             Checksum: 4B57741B810AB932249D379826C0255C;1372.
- ) 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.908  Distance^
+                2 & 0.047 \\ 
 Here is how much of TeX's memory you used:
- 17363 strings out of 478918
- 308475 string characters out of 5864811
- 827238 words of memory out of 5000000
- 36955 multiletter control sequences out of 15000+600000
- 408060 words of font info for 73 fonts, out of 8000000 for 9000
+ 17350 strings out of 478918
+ 308134 string characters out of 5864811
+ 815238 words of memory out of 5000000
+ 36948 multiletter control sequences out of 15000+600000
+ 408052 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,11n,122p,395b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,11n,122p,395b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on HW1.pdf (17 pages).
+Output written on HW1.pdf (10 pages).
