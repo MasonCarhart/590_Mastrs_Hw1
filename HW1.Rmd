@@ -608,7 +608,7 @@ stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
 ```
 </div>
 
-```{r histrogram, message=FALSE, warning=FALSE}
+```{r histrogram, message=FALSE, warning=FALSE, results='asis'}
 
 # Creating graph for assesing distance cutoffs
 ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
@@ -618,11 +618,11 @@ ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
   labs(x = "Miles From School", y = "Count", fill = "Is Girl",
        title = "Distribution of Distance from School By Gender")
 
-print("Outliers of Column 1")
-print(tidy(reg3))
-print("Outliers of Column 2")
-print(tidy(reg4))
+stargazer(reg3,reg4, out = "latex", dep.var.labels = "Formal School"
+          , title = "Column 1 and 2 With Outliers")
 ```
+</div>
+
 
 \newpage
 
@@ -636,11 +636,6 @@ Both of our coefficient estimates were very similar as the treatment for girls a
 
 ## Table 4 Column 1 Question 6:
 The coefficients on all estimates are minimally different with the largest change being the difference between the treated groups in column 2 and 4, (the difference is .018). The standard errors are also negligibly different. 
-
-```{r echo = FALSE}
-
-```
-
 
 ## Table 4 Column 2 Question 6:
 Like in table 4, both treatments are statically significant. For girls, the only statistically significant control is the child's age in the fall of 2007 (5%). For The males there were more statistically significant controls. The age of the child, (1% level) if the child's family speaks Tajik, (5% level) if the head of household is a farmer or not, (10% level) and lastly the nearest schools distance, (5% level) . For both genders the child’s age was significant and positive which means that as the child grows older, they are more likely to get a better test score. 
