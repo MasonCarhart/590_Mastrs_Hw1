@@ -635,8 +635,8 @@ Both of our coefficient estimates were very similar as the treatment for girls a
 The coefficients on all estimates are minimally different with the largest change being the difference between the treated groups in column 2 and 4, (the difference is .018). The standard errors are also negligibly different. 
 
 ```{r echo = false}
-print(tidy(reg3))
-print(tidy(reg4))
+print(summary(reg3))
+print(summary(reg4))
 ```
 
 
