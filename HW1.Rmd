@@ -569,7 +569,8 @@ col_1_df %>% kbl(col.names = c("Name","Treatment Avg",
 ```{r, results = 'asis'}
 # Further analysis part 1
 stargazer(reg_fa, title = "Further Analysis: Distance Effect on Enrollment",
-          covariate.labels = c('Treatment', "chagcharan"),
+          covariate.labels = c("Girl", "Distance to Nearest Formal School",
+                               "Girl Distance Interaction", "Distance^2"),
           dep.var.labels = "Enrollment",
           type = "latex", notes = c("S.E Clustered by village"))
 ```
