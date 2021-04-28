@@ -619,7 +619,7 @@ ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
        title = "Distribution of Distance from School By Gender")
 
 stargazer(reg3,reg4, out = "latex", dep.var.labels = "Formal School"
-          , title = "Column 1 and 2 With Outliers")
+          , title = "Column 1 and 2 With Outliers", header = F)
 ```
 </div>
 
