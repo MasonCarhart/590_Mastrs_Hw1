@@ -571,7 +571,7 @@ col_1_df %>% kbl(col.names = c("Name","Treatment Avg",
 
 <div align="center">
 ```{r, results = "asis"}
-
+# Creating further analysis table for distance effects on enrollment
 stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g, 
           reg_near_b,reg_close_b,reg_nclose_b, reg_far_b, 
           keep.stat = c('n', 'rsq'),
@@ -590,7 +590,7 @@ stargazer(reg_near_g,reg_close_g,reg_nclose_g, reg_far_g,
 
 <div align="center">
 ```{r, results = "asis"}
-
+# Creating further analysis table for distance effects on test scores
 stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
           reg_test_far_g, reg_test_near_b, reg_test_close_b, 
           reg_test_nclose_b,reg_test_far_b , 
@@ -610,7 +610,7 @@ stargazer(reg_test_near_g, reg_test_close_g, reg_test_nclose_g,
 
 ```{r histrogram}
 
-
+# Creating graph for assesing distance cutoffs
 ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
   geom_histogram(color = "grey", bins = 60, alpha = .9) +
   scale_fill_viridis_d(option = "C") +
