@@ -622,20 +622,20 @@ ggplot(af, aes(x = f07_nearest_scl, fill = as.factor(f07_girl_cnt))) +
 
 \newpage
 
-#**Written Questions:**
+# **Written Questions:**
 
-##Outlier question 1
-An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and in the fall of 2007 or had more than 10 jeribs of land owned by the household in the fall of 2007 or had more than 20 poeple in the houdcount in fall of 2007  or a person that has number of people in a household greater than 20 and are observed in summer of 2008. Or if number of jerribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
+## Outlier question 1:
+An outlier observation is someone who had more than 50 sheep or goats owned by the household in 2007 and observed in the fall of 2007 or had more than 10 jeribs of land owned by the household and was observed in the fall of 2007 or had more than 20 people in the headcount in fall of 2007 or a person that has number of people in a household greater than 20 and are observed in summer of 2008. They are also an outlier if the number of jeribs of land counted is more than 10 and are observed in summer of 2008. Lastly if the number of sheep and goats is above 50 and they are observed in summer of 2008.
 
-##Table 4 Question 5:
-Both of our coefficient estimates were very similar as the treatment for girls was off by 0.004 and the treatment for men is 0.001. The standard error for women was exactly the same while the standard error for men is unknown from table four.
+## Table 4 Column 1 Question 5:
+Both of our coefficient estimates were very similar as the treatment for girls and boys were exactly the same to the thousandth degree. The standard error for women was exactly the same while the standard error for men is unknown from table four.
 
-##Table 4 Question 6:
+## Table 4 Column 1 Question 6:
 The coefficients on all estimates are minimally different with the largest change being the difference between the treated groups in column 2 and 4, (the difference is .018). The standard errors are also negligibly different. 
 
-##Table 4 Column 2 Question 6:
+## Table 4 Column 2 Question 6:
 Like in table 4, both treatments are statically significant. For girls, the only statistically significant control is the child's age in the fall of 2007 (5%). For The males there were more statistically significant controls. The age of the child, (1% level) if the child's family speaks Tajik, (5% level)  if the head of household is a farmer or not, (10% level)  and lastly the nearest schools distance, (1% level) . For both genders the child’s age was significant and positive which means that as the child grows older, they are more likely to get a better test score. 
 
-##Further Analysis:
+## Further Analysis:
 To start looking at the relationship at the between school we regressed formal enrolled on the distance to the nearest school, whether the child was a girl, an interaction between the two and a variables for distance squared to control for any quadratic patterns. Surprisingly the only statisally significant variable in that regression was whether or not the child was a girl. This means that being farther away does not affect formal enrollment and distance does not affect girls more than boys. The regression output does implicate that women do attend school less than their boy counterparts. Now when re-looking at formal enrollment based on four distance types, short medium short, medium long, and long, we can see that for girl, the amount of distance does not change the fact that treatment is significantly increasing enrollment or test scores. More specifically as distance increases, the effect of the treatment on tests for girls decreases while it increases for men. Meaning that the treatment is most effective for girls who live close and boys who live farther away. Interestingly the treatment for both boys and girls are mostly similar except when the schools were a medium long distance away meaning that distance does not play a significant role in how the treatment will affect the sexes. Overall it seems as though distance is a more important variable when looking at the test scores for boys and girls and not as much for their attendance rates.
 
